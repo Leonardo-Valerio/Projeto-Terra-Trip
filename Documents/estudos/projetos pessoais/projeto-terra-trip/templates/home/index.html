@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+    <header class="banner banner-home" >
+        {% include 'home/partials/_header.html' %}
+    </header>    
+    <main class="principal">
+        {% include 'home/partials/_menu-lateral.html' %}
+        <section class="categorias">
+            <div class="box">
+                <h2>Por Continentes</h2>
+                <ul class="lista-de-cards">
+                    <li class="cards">
+                        <a href="{% url 'continente' %}" class="card">
+                            Europa
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>   
+{% endblock %}

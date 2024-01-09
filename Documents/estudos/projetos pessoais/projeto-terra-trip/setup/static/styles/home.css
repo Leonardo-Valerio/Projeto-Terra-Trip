@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --marrom: #A67458;
+    --azul1: #C4EEF2;
+    --azul2: #7AB8BF;
+    --azul3: #3E848C;
+    --azul4: #025159;
+}
+*{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    
+}
+html, body {
+    overflow-x: hidden; /* Tenta esconder a barra de rolagem horizontal */
+}
+
+
+.banner{
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 25vh 20vh;
+    grid-template-areas: 
+        "box1"
+        "box2"
+    ;
+}
+.banner-home{
+    background-image: url(../assets/home/banner2.jpg);
+}
+.banner-europa{
+    background-image: url(../assets/europa/europa-g.jpg);
+}
+
+
+
+.titulo{
+    grid-area: box1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulo h1{
+    font-size: 15vh;
+    font-weight: lighter;
+}
+
+.menu-principal{
+    grid-area: box2;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.menu-principal nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 10vw;
+}
+.menu-principal > nav > a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.menu-principal > nav > a:hover{
+    transition-duration: 0.3s;
+    color: var(--azul2);
+}
+.principal{
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    grid-template-areas: 
+        "box1 box2"
+    ;
+}
+.menu-lateral{
+    grid-area: box1;
+    background-color: var(--azul1);
+}
+.menu-lateral nav{
+    display: flex;
+    flex-direction: column;
+
+}
+.menu-lateral > nav > a{
+    text-decoration: none;
+    padding: 50px;
+    color: var(--azul4);
+    font-size: 3vh;
+    border-bottom: 1px solid var(--azul3);
+    border-right:1px solid var(--azul3) ;
+}
+.menu-lateral > nav > a:hover{
+    transition-duration: 0.3s;
+    color: var(--marrom);
+}
+.categorias{
+    grid-area: box2;
+}
+.box{
+    margin-left: 5vw;
+    margin-top: 5vh;
+}
+
+.lista-de-cards{
+    margin-top: 2vh;
+}
+.cards{
+    list-style: none;
+    
+}
+.card{
+    margin-top: 3vh;
+    text-decoration: none;
+    width: 15vw;
+    padding: 40px;
+    background: url(../assets/home/europa1.jpg);
+    background-color: rgba(0, 0, 0, 0.655);
+    border-radius:10px;
+    text-align: center;
+    font-size: 5vh;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+    color: rgb(255, 255, 255);
+    background-color:black;
+    background-image: none;
+    background-position: top;
+       
+}
+footer{
+    text-align: center;
+}
