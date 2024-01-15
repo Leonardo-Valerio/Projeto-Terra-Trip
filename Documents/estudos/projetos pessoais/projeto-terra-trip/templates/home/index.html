@@ -10,13 +10,16 @@
             <div class="box">
                 <h2>Por Continentes</h2>
                 <ul class="lista-de-cards">
-                    {% for nome,info in card.items %}
+                    {% if dados %}
+                    {% for i in dados %}
                     <li class="cards">
                         <a href="{% url 'continente' %}" class="card">
-                            {{ info.nome }}
+                            {{ i.nome }}
                         </a>
                     </li>
                     {% endfor %}
+                    {% else %}
+                    {%  endif %}
                 </ul>
             </div>
         </section>

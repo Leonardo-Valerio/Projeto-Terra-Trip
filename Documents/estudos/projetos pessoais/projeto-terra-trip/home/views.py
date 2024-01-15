@@ -1,18 +1,10 @@
 from django.shortcuts import render
+from home.models import Card
 
-dados = {
-    1:{
-        'nome': 'Europa',
-        'img':''
-    },
-    2:{
-        'nome': 'América',
-        'img':''
-    }
-}
+dados = Card.objects.all()
 
 def index(request):
-    return render(request, 'home/index.html', {'card':dados})
+    return render(request, 'home/index.html', {'dados':dados})
 
 def continente(request):
     return render(request, 'home/continente.html')
