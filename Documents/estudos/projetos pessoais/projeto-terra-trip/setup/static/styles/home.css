@@ -120,8 +120,7 @@ html, body {
     text-decoration: none;
     width: 15vw;
     padding: 40px;
-    background: url(../assets/home/europa1.jpg);
-    background-color: rgba(0, 0, 0, 0.655);
+    background-color: rgba(0, 0, 0, 0.97);
     border-radius:10px;
     text-align: center;
     font-size: 5vh;
@@ -133,10 +132,8 @@ html, body {
 }
 
 .card:hover {
-    color: rgb(255, 255, 255);
-    background-color:black;
-    background-image: none;
-    background-position: top;
+    
+    background-position: bottom;
        
 }
 footer{

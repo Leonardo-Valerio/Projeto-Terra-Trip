@@ -7,4 +7,4 @@ def index(request):
     return render(request, 'home/index.html', {'dados':dados})
 
 def continente(request):
-    return render(request, 'home/continente.html')
+    return render(request, 'home/continente.html', {'dados':dados})

@@ -10,16 +10,17 @@
             <div class="box">
                 <h2>Por Continentes</h2>
                 <ul class="lista-de-cards">
-                    {% if dados %}
-                    {% for i in dados %}
-                    <li class="cards">
-                        <a href="{% url 'continente' %}" class="card">
+                    <li class="cards"  >
+                        {% if dados %}
+                        {% for i in dados %}
+                        <a href="{% url 'continente' %}" class="card" style="background-image: url('/static/assets/europa/{{ i.imagem }}'); ">
                             {{ i.nome }}
                         </a>
+                        {% endfor %}
+                        {% else %}
+                        {%  endif %}
                     </li>
-                    {% endfor %}
-                    {% else %}
-                    {%  endif %}
+                    
                 </ul>
             </div>
         </section>

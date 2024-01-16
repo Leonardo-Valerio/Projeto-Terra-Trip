@@ -11,9 +11,14 @@
                 <h2>Para curtir o verão</h2>
                 <ul class="lista-de-cards">
                     <li class="cards">
-                        <a href="{% url 'continente' %}" class="card">
-                            Espanha
+                        {% if dados %}
+                        {% for i in dados %}
+                        <a href="{% url 'continente' %}" class="card" style="background-image: url('/static/assets/europa/{{ i.imagem }}') ">
+                            {{ i.nome }}
                         </a>
+                        {% endfor %}
+                        {% else %}
+                        {%  endif %}
                     </li>
                 </ul>
             </div>
