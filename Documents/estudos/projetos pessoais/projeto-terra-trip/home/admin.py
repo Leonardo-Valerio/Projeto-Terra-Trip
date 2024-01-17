@@ -1,3 +1,7 @@
 from django.contrib import admin
+from home.models import Card
 
-# Register your models here.
+class listandoCards(admin.ModelAdmin):
+    list_display=('id', 'nome')
+    list_display_links=('id', 'nome')
+admin.site.register(Card,listandoCards)

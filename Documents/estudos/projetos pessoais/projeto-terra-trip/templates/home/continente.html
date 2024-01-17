@@ -13,8 +13,9 @@
                     <li class="cards">
                         {% if dados %}
                         {% for i in dados %}
-                        <a href="{% url 'continente' %}" class="card" style="background-image: url('/static/assets/europa/{{ i.imagem }}') ">
-                            {{ i.nome }}
+                        <a href="{% url 'continente' %}" class="card" >
+                            <img  class="img-card" src="{% static 'assets/imagens-cards/' %}{{ i.imagem }}" alt="">
+                            <p class="titulo-card" >{{ i.nome }}</p>
                         </a>
                         {% endfor %}
                         {% else %}

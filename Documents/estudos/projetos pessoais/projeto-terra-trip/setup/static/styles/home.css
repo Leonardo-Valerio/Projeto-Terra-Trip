@@ -119,23 +119,50 @@ html, body {
     margin-top: 3vh;
     text-decoration: none;
     width: 15vw;
-    padding: 40px;
+    height: 20vh;
     background-color: rgba(0, 0, 0, 0.97);
+    position: relative;
+    display: inline-block;
     border-radius:10px;
-    text-align: center;
-    font-size: 5vh;
-    color: #ffffff;
-    background-size: cover;
-    background-position: center;
+    margin-right: 2vw;
+    overflow: hidden;
+}
+.img-card{
+    border-radius:10px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
     display: block;
-    transition: 0.3s ease-in-out;
+    z-index: 1;
 }
 
-.card:hover {
-    
-    background-position: bottom;
-       
+.titulo-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 5vh;
+    font-weight: lighter;
+    text-align: center;
+    z-index: 3;
 }
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Altere a opacidade (o último valor) conforme necessário */
+    z-index: 1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card:hover::before {
+    background-color: rgba(0, 0, 0, 0.8); /* Altere a opacidade (o último valor) conforme necessário */
+}
+
 footer{
     text-align: center;
 }
