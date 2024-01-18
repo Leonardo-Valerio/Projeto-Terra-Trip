@@ -2,7 +2,15 @@
 {% load static %}
 {% block content %}
     <header class="banner banner-home" >
-        {% include 'home/partials/_header.html' %}
+        <div class="titulo">
+            <h1>Terra Trip</h1>
+        </div>
+        <div class="menu-principal">
+            <nav>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="">Sobre Nós</a>
+            </nav>
+        </div>
     </header>    
     <main class="principal">
         {% include 'home/partials/_menu-lateral.html' %}
@@ -13,7 +21,7 @@
                     <li class="cards"  >
                         {% if dados %}
                         {% for i in dados %}
-                        <a href="{% url 'continente' %}" class="card" >
+                        <a href="{% url 'continente' i.id %}" class="card" >
                             <img class="img-card" src="{% static 'assets/imagens-cards/' %}{{ i.imagem }}" alt="">
                             <p class="titulo-card">{{ i.nome }}</p>
                         </a>

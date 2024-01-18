@@ -3,5 +3,5 @@ from home.views import index, continente
 
 urlpatterns = [
     path('', index, name='home'),
-    path('continente/',continente, name='continente'),
+    path('continente/<int:img_id>',continente, name='continente'),
 ]
