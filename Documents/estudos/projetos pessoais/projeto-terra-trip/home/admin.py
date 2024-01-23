@@ -10,3 +10,5 @@ class listandoCards(admin.ModelAdmin):
 admin.site.register(Continentes, listandoCards)
 admin.site.register(Paises, listandoCards)
 admin.site.register(Pontos_turisticos, listandoCards)
+
+

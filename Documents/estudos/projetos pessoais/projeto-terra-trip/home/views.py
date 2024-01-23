@@ -9,5 +9,5 @@ def index(request):
 
 def continente(request, img_id):
     card_continente = get_object_or_404(Continentes, pk=img_id)
-    dados_pais = Paises.objects.filter(continente_relacionado=card_continente)
-    return render(request, 'home/continente.html', {'dados':dados_pais, "card": card_continente})
+    dados_pais_populares = Paises.objects.filter(continente_relacionado=card_continente,popular=True)
+    return render(request, 'home/continente.html', {'dados_pais_populares':dados_pais_populares, "card": card_continente})

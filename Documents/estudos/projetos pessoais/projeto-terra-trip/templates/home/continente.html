@@ -12,17 +12,21 @@
         {% include 'home/partials/_menu-lateral.html' %}
         <section class="categorias">
             <div class="box">
-                <h2>Para curtir o verão</h2>
+                <p class="legenda">{{ card.legenda }}</p>
+                <p class="descricao">{{ card.descricao }}</p>
+                
                 <ul class="lista-de-cards">
+                    <h2>Os mais queridinhos</h2>
                     <li class="cards">
-                        {% if dados %}
-                        {% for i in dados %}
+                        {% if dados_pais_populares %}
+                        {% for i in dados_pais_populares %}
                         <a href="{% url 'continente' i.id %}" class="card" >
                             <img  class="img-card" src="{{ i.imagem.url }}" alt="">
                             <p class="titulo-card" >{{ i.nome }}</p>
                         </a>
                         {% endfor %}
                         {% else %}
+                        <p>nao achou</p>
                         {%  endif %}
                     </li>
                 </ul>

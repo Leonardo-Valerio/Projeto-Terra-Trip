@@ -162,6 +162,17 @@ html, body {
     margin-left: 5vw;
     margin-top: 5vh;
 }
+.legenda{
+    width: 90%;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 5vh;
+}
+.descricao{
+    width: 90%;
+    font-size: large;
+    margin-bottom: 5vh;
+}
 
 .lista-de-cards{
     margin-top: 2vh;
