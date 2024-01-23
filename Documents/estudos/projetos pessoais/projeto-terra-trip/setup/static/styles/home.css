@@ -136,11 +136,12 @@ html, body {
 }
 .menu-lateral{
     grid-area: box1;
-    background-color: var(--azul1);
+    background-color: white;
 }
 .menu-lateral nav{
     display: flex;
     flex-direction: column;
+    background-color: var(--azul1);
 
 }
 .menu-lateral > nav > a{
@@ -176,6 +177,9 @@ html, body {
 
 .lista-de-cards{
     margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .cards{
     list-style: none;
@@ -192,6 +196,7 @@ html, body {
     border-radius:10px;
     margin-right: 2vw;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .img-card{
     border-radius:10px;
@@ -223,10 +228,12 @@ html, body {
     background-color: rgba(0, 0, 0, 0); /* Altere a opacidade (o último valor) conforme necessário */
     z-index: 1;
     transition: background-color 0.3s ease-in-out;
+    
 }
 
 .card:hover::before {
     background-color: rgba(0, 0, 0, 0.8); /* Altere a opacidade (o último valor) conforme necessário */
+    
 }
 
 footer{

@@ -11,21 +11,7 @@
         {% include 'home/partials/_menu-lateral.html' %}
         <section class="categorias">
             <div class="box">
-                <h2>Por Continentes</h2>
-                <ul class="lista-de-cards">
-                    <li class="cards"  >
-                        {% if dados %}
-                        {% for i in dados %}
-                        <a href="{% url 'continente' i.id %}" class="card" >
-                            <img class="img-card" src="{{ i.imagem.url }}" alt="">
-                            <p class="titulo-card">{{ i.nome }}</p>
-                        </a>
-                        {% endfor %}
-                        {% else %}
-                        {%  endif %}
-                    </li>
-                    
-                </ul>
+                {% include 'home/partials/_exibir-cards.html' with titulo='Por continentes' dados=dados url_nome='continente' %}
             </div>
         </section>
     </main>   

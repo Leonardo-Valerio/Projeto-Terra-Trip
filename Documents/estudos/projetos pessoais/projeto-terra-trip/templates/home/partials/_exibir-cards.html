@@ -1,0 +1,20 @@
+
+{% block exibir-cards  %}
+    <h2>{{ titulo }}</h2>
+    <ul class="lista-de-cards">
+        {% if dados %}
+            {% for item in dados %}
+                <li class="cards">
+                    <a href="{% url url_nome item.id %}" class="card">
+                        <img class="img-card" src="{{ item.imagem.url }}" alt="">
+                        <p class="titulo-card">{{ item.nome }}</p>
+                    </a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>
+                <p>nao achou</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}

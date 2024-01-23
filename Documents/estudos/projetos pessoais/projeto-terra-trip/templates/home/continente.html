@@ -15,21 +15,8 @@
                 <p class="legenda">{{ card.legenda }}</p>
                 <p class="descricao">{{ card.descricao }}</p>
                 
-                <ul class="lista-de-cards">
-                    <h2>Os mais queridinhos</h2>
-                    <li class="cards">
-                        {% if dados_pais_populares %}
-                        {% for i in dados_pais_populares %}
-                        <a href="{% url 'continente' i.id %}" class="card" >
-                            <img  class="img-card" src="{{ i.imagem.url }}" alt="">
-                            <p class="titulo-card" >{{ i.nome }}</p>
-                        </a>
-                        {% endfor %}
-                        {% else %}
-                        <p>nao achou</p>
-                        {%  endif %}
-                    </li>
-                </ul>
+                {% include 'home/partials/_exibir-cards.html' with titulo='Os mais queridinhos' dados=dados_pais_populares url_nome='continente' %}
+                
             </div>
         </section>
     </main>   
