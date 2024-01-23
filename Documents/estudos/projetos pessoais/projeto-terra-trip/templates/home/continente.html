@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
   
-    <header class="banner"  style="background-image: url('{% static 'assets/imagens-cards/' %}{{ card.imagem }}');" >
+    <header class="banner"  style="background-image: url('{{ card.imagem.url }}');" >
         <div class="titulo">
             <h1>{{ card.nome }}</h1>
         </div>

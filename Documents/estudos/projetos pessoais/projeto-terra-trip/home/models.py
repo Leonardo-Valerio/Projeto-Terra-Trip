@@ -9,7 +9,7 @@ class Card(models.Model):
     ]
     nome = models.CharField(max_length=100, null=False)
     categoria = models.CharField(max_length=100, choices=OPCOES_CATEGORIAS, default='')
-    imagem = models.CharField(max_length=200)
+    imagem = models.ImageField(upload_to='fotos/%Y/%m/%d/', blank= True )
     descricao = models.CharField(max_length=250,null=False, blank=False)
     informacao = models.TextField(null=False, blank=False),
     continente_relacionado = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True,limit_choices_to={'categoria': 'CONTINENTE'})

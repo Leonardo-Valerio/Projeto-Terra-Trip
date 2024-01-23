@@ -17,7 +17,7 @@
                         {% if dados %}
                         {% for i in dados %}
                         <a href="{% url 'continente' i.id %}" class="card" >
-                            <img class="img-card" src="{% static 'assets/imagens-cards/' %}{{ i.imagem }}" alt="">
+                            <img class="img-card" src="{{ i.imagem.url }}" alt="">
                             <p class="titulo-card">{{ i.nome }}</p>
                         </a>
                         {% endfor %}
