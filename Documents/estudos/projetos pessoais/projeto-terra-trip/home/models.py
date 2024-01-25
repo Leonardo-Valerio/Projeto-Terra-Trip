@@ -18,11 +18,6 @@ class Continentes(models.Model):
     
 class Paises(models.Model):
     
-    OPCOES_TOPICOS = [
-        ('OS MAIS QUERIDINHOS', 'Os mais queridinhos'),
-        ('PARA CURTIR O VERÃO', 'Para curtir o verão'),
-        ('PARA CURTIR O INVERNO', 'Para curtir o inverno'),
-    ]
     nome = models.CharField(max_length=100, null=False)
     imagem = models.ImageField(upload_to="fotos-paises/%Y/%m/%d", blank=True)
     legenda = models.CharField(max_length=250,null=False, blank=False)
@@ -31,6 +26,10 @@ class Paises(models.Model):
     popular = models.BooleanField(default=False)
     verao= models.BooleanField(default=False)
     inverno= models.BooleanField(default=False)
+    outono=models.BooleanField(default=False)
+    primavera=models.BooleanField(default=False)
+    choque_cultural=models.BooleanField(default=False)
+    historicos=models.BooleanField(default=False)
     
     def __str__(self):
         return (self.nome)

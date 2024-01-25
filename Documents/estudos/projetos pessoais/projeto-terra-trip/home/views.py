@@ -9,5 +9,24 @@ def index(request):
 
 def continente(request, img_id):
     card_continente = get_object_or_404(Continentes, pk=img_id)
-    dados_pais_populares = Paises.objects.filter(continente_relacionado=card_continente,popular=True)
-    return render(request, 'home/continente.html', {'dados_pais_populares':dados_pais_populares, "card": card_continente})
+    dados_paises_populares = Paises.objects.filter(continente_relacionado=card_continente,popular=True)
+    dados_paises_historicos= Paises.objects.filter(continente_relacionado=card_continente,historicos=True)
+    dados_paises_choque_cultural= Paises.objects.filter(continente_relacionado=card_continente,choque_cultural=True)
+    dados_paises_verao= Paises.objects.filter(continente_relacionado=card_continente,verao=True)
+    dados_paises_inverno=Paises.objects.filter(continente_relacionado=card_continente,inverno=True)
+    dados_paises_primavera=Paises.objects.filter(continente_relacionado=card_continente,primavera=True)
+    dados_paises_outono=Paises.objects.filter(continente_relacionado=card_continente,outono=True)
+    return render(request, 'home/continente.html', {
+        'dados_paises_populares':dados_paises_populares,
+        "card": card_continente,
+        'dados_paises_historicos': dados_paises_historicos, 
+        'dados_paises_choque_cultural':dados_paises_choque_cultural,
+        'dados_paises_verao': dados_paises_verao,
+        'dados_paises_inverno': dados_paises_inverno,
+        'dados_paises_primavera': dados_paises_primavera,
+        'dados_paises_outono': dados_paises_outono
+        })
+
+def pais(request, pais_id):
+    item_pais = get_object_or_404(Paises,pk=pais_id)
+    return render(request,'home/pais.html', {'item_pais':item_pais})

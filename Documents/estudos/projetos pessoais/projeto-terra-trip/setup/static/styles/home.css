@@ -175,6 +175,10 @@ html, body {
     margin-bottom: 5vh;
 }
 
+.titulo-topico{
+    margin-top: 3vh;
+}
+
 .lista-de-cards{
     margin-top: 2vh;
     display: flex;
@@ -183,6 +187,7 @@ html, body {
 }
 .cards{
     list-style: none;
+   
     
 }
 .card{
