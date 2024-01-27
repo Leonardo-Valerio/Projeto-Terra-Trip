@@ -49,7 +49,7 @@ html, body {
     justify-content: center;
 }
 .titulo h1{
-    font-size: 15vh;
+    font-size: 15vw;
     color: white;
     font-weight: lighter;
 }
@@ -168,9 +168,13 @@ html, body {
     font-weight: bold;
     font-size: larger;
     margin-bottom: 5vh;
+    text-indent: 2em;
+    line-height: 3vh;
 }
 .descricao{
     width: 90%;
+    text-indent: 2em;
+    line-height: 4vh;
     font-size: large;
     margin-bottom: 5vh;
 }
@@ -243,4 +247,49 @@ html, body {
 
 footer{
     text-align: center;
+}
+
+@media (max-width: 1300px) {
+    .lista-de-cards{
+        width: 100%;
+    }
+    .cards {
+        width: 50%;
+    }
+    .card{
+        width: 90%;
+        height: 90%;
+    }
+    .titulo-card{
+        font-size: 4vw;
+    }
+    .principal{
+        display: block;
+    }
+    .menu-lateral nav{
+        flex-direction: row;
+        justify-content: center;
+        border-bottom: 1px solid var(--azul3);
+        
+        
+    }
+    .menu-lateral > nav > a{
+        text-decoration: none;
+        padding: 3vw;
+        color: var(--azul4);
+        font-size: 3vw;
+        border-right:none ;
+        border-bottom: none;
+       
+        
+    }
+    
+}
+
+
+
+@media (max-width:700px){
+    .titulo-card{
+        font-size: 100%;
+    }
 }
