@@ -39,6 +39,7 @@ class Pontos_turisticos(models.Model):
     imagem = models.ImageField(upload_to='fotos_pontos-turisticos/%Y/%m/%d', blank=True)
     legenda = models.CharField(max_length=250,null=False, blank=False)
     descricao = models.TextField(null=False, blank=False)
+    iframe_google_maps = models.TextField(default='')
     pais_relacionado = models.ForeignKey(Paises, on_delete=models.CASCADE, null= False)
     def __str__(self):
         return (self.nome)

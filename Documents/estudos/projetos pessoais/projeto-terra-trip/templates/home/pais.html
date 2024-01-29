@@ -3,6 +3,7 @@
 {% block content %}
   
     <header class="banner"  style="background-image: url('{{ item_pais.imagem.url }}');" >
+        
         <div class="titulo">
             <h1>{{ item_pais.nome }}</h1>
         </div>
@@ -12,8 +13,16 @@
         {% include 'home/partials/_menu-lateral.html' %}
         <section class="categorias">
             <div class="box">
-                <p class="legenda">{{ item_pais.legenda }}</p>
-                <p class="descricao">{{ item_pais.descricao }}</p>
+                <div class="box-pontos">
+                    <p class="legenda">{{ item_pais.legenda }}</p>
+                    <p class="descricao">{{ item_pais.descricao }}</p>
+                    {% for ponto in dados_pontos_turisticos %}
+                    <p class="legenda">{{ ponto.legenda }}</p>
+                    <div class="imagem-ponto" style="background-image:url('{{ ponto.imagem.url }}') ;"></div>
+
+                    <iframe src="{{ ponto.iframe_google_maps }}"></iframe>
+                    {% endfor %}
+                </div>
             </div>
         </section>
         

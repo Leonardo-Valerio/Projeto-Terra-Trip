@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from home.models import Continentes,Paises
+from home.models import Continentes,Paises, Pontos_turisticos
 
 dados_continente = Continentes.objects.all()
 
@@ -29,4 +29,5 @@ def continente(request, img_id):
 
 def pais(request, pais_id):
     item_pais = get_object_or_404(Paises,pk=pais_id)
-    return render(request,'home/pais.html', {'item_pais':item_pais})
+    dados_pontos_turisticos = Pontos_turisticos.objects.filter(pais_relacionado=item_pais)
+    return render(request,'home/pais.html', {'item_pais':item_pais , 'dados_pontos_turisticos':dados_pontos_turisticos})
