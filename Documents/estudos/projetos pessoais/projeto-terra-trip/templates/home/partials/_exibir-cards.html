@@ -1,20 +1,22 @@
 
 {% block exibir-cards  %}
-    <h2 class="titulo-topico">{{ titulo }}</h2>
-    <ul class="lista-de-cards">
-        {% if dados %}
-            {% for item in dados %}
-                <li class="cards">
-                    <a href="{% url url_nome item.id %}" class="card">
-                        <img class="img-card" src="{{ item.imagem.url }}" alt="">
-                        <p class="titulo-card">{{ item.nome }}</p>
-                    </a>
+    <section class="section-cards" id="section-{{id}}">
+        <h2 class="titulo-topico">{{ titulo }}</h2>
+        <ul class="lista-de-cards">
+            {% if dados %}
+                {% for item in dados %}
+                    <li class="cards">
+                        <a href="{% url url_nome item.id %}" class="card">
+                            <img class="img-card" src="{{ item.imagem.url }}" alt="">
+                            <p class="titulo-card">{{ item.nome }}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>
+                    <p>nao achou</p>
                 </li>
-            {% endfor %}
-        {% else %}
-            <li>
-                <p>nao achou</p>
-            </li>
-        {% endif %}
-    </ul>
+            {% endif %}
+        </ul>
+    </section>
 {% endblock %}

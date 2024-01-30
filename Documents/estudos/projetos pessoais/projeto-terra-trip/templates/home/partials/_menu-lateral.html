@@ -1,7 +1,25 @@
 <section class="menu-lateral">
     <nav>
-        <a href="">Mais Desejadas</a>
-        <a href="">Mais Surpreendentes</a>
-        <a href="">Choque Cultural</a>
+        <a href="#section-1">Mais Desejadas</a>
+        <a href="#section-2">Desfrutar História</a>
+        <a href="#section-3">Mais Surpreendentes</a>
+        <a href="#section-4">Mais recomendados para o Verão</a>
+        <a href="#section-5">Mais recomendados para o Inverno</a>
+        <a href="#section-6">Mais recomendados para o Primavera</a>
+        <a href="#section-7">Mais recomendados para o Outono</a>
     </nav>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+  var menuLateral = document.querySelector('.menu-lateral');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) { // Ajuste conforme necessário
+      menuLateral.classList.add('scroll');
+    } else {
+      menuLateral.classList.remove('scroll');
+    }
+  });
+});
+</script>
