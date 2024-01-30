@@ -251,10 +251,27 @@ footer{
 .box-pontos{
     text-align: center;
 }
+.box-cidade{
+    text-align: start;
+}
+.nome-cidade{
+    width: 90%;
+    font-weight: bold;
+    font-size: 2vw;
+    margin-bottom: 5vh;
+    
+}
+.legenda-cidade{
+    width: 90%;
+    text-indent: 2em;
+    line-height: 4vh;
+    font-size: large;
+    margin-bottom: 5vh;
+}
 
 .imagem-ponto{
     height: 200px;
-    width: 200px;
+    width: 100%;
     background-size: cover;
     background-position: center;
 }

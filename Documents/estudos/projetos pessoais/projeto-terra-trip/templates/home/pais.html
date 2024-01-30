@@ -16,30 +16,37 @@
                 <div class="box-pontos">
                     <p class="legenda">{{ item_pais.legenda }}</p>
                     <p class="descricao">{{ item_pais.descricao }}</p>
-                    {% for ponto in dados_pontos_turisticos %}
-                    <p class="legenda">{{ ponto.legenda }}</p>
-                    <div class="imagem-ponto" style="background-image:url('{{ ponto.imagem.url }}') ;"></div>
-                    <div 
-                                class="mapa" 
-                               
-                                data-latitude="{{ ponto.latitude }}" 
-                                data-longitude="{{ ponto.longitude }}" 
-                                data-id="{{ ponto.id }}"
-                            ></div>
-                            <script>
-                                window.onload = function() {
-                                    var mapElements = document.querySelectorAll('.mapa');
-                                    mapElements.forEach(function(element) {
-                                        element.getAttribute('data-latitude'), 'Longitude:', element.getAttribute('data-longitude')
-                                        var latitude = parseFloat(element.getAttribute('data-latitude'));
-                                        var longitude = parseFloat(element.getAttribute('data-longitude'));
-                                        var map = L.map(element).setView([latitude,longitude], 16);
-                                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-                                        L.marker([latitude, longitude]).addTo(map);
-                                    });
-                                };
-                            </script>
-                
+                    {% for cidade in dados_cidades %}
+                    <div class="box-cidade">
+                        <p class="nome-cidade">{{ cidade.nome }}</p>
+                        <p class="legenda-cidade">{{ cidade.legenda }}</p>
+                    </div>
+                        {% for ponto in dados_pontos_turisticos %}
+                        <p class="nome-cidade">{{ ponto.nome }}</p>
+                        <p class="legenda-cidade">{{ ponto.legenda }}</p>
+                        <div class="imagem-ponto" style="background-image:url('{{ ponto.imagem.url }}') ;"></div>
+                        <div 
+                                    class="mapa" 
+                                
+                                    data-latitude="{{ ponto.latitude }}" 
+                                    data-longitude="{{ ponto.longitude }}" 
+                                    data-id="{{ ponto.id }}"
+                                ></div>
+                                <script>
+                                    window.onload = function() {
+                                        var mapElements = document.querySelectorAll('.mapa');
+                                        mapElements.forEach(function(element) {
+                                            element.getAttribute('data-latitude'), 'Longitude:', element.getAttribute('data-longitude')
+                                            var latitude = parseFloat(element.getAttribute('data-latitude'));
+                                            var longitude = parseFloat(element.getAttribute('data-longitude'));
+                                            var map = L.map(element).setView([latitude,longitude], 16);
+                                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+                                            L.marker([latitude, longitude]).addTo(map);
+                                        });
+                                    };
+                                </script>
+                    
+                        {% endfor %}
                     {% endfor %}
                     
                 </div>
