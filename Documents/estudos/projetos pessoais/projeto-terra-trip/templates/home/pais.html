@@ -9,8 +9,8 @@
         </div>
         {% include 'home/partials/_header.html' %}
     </header>   
-    <main class="principal">
-        {% include 'home/partials/_menu-lateral.html' %}
+    <main class="main-pais">
+        
         <section class="categorias">
             <div class="box">
                 <div class="box-pontos">
@@ -22,16 +22,21 @@
                         <p class="legenda-cidade">{{ cidade.legenda }}</p>
                     </div>
                         {% for ponto in dados_pontos_turisticos %}
-                        <p class="nome-cidade">{{ ponto.nome }}</p>
-                        <p class="legenda-cidade">{{ ponto.legenda }}</p>
-                        <div class="imagem-ponto" style="background-image:url('{{ ponto.imagem.url }}') ;"></div>
-                        <div 
-                                    class="mapa" 
-                                
-                                    data-latitude="{{ ponto.latitude }}" 
-                                    data-longitude="{{ ponto.longitude }}" 
-                                    data-id="{{ ponto.id }}"
-                                ></div>
+                        {% if ponto.cidade_relacionada == cidade %}
+                        <p class="nome-ponto">{{ ponto.nome }}</p>
+                        <p class="legenda-pontos">{{ ponto.legenda }}</p>
+                        <div class="box-imagens" >
+                            <div class="imagem-ponto imagem1" style="background-image:url('{{ ponto.imagem1.url }}') ;"></div>
+                            <div class="imagem-ponto imagem2" style="background-image:url('{{ ponto.imagem2.url }}') ;"></div>
+                            <div class="imagem-ponto imagem3" style="background-image:url('{{ ponto.imagem3.url }}') ;"></div>
+                            <div
+                                        class="mapa"
+                            
+                                        data-latitude="{{ ponto.latitude }}"
+                                        data-longitude="{{ ponto.longitude }}"
+                                        data-id="{{ ponto.id }}"
+                                    ></div>
+                        </div>
                                 <script>
                                     window.onload = function() {
                                         var mapElements = document.querySelectorAll('.mapa');
@@ -45,7 +50,7 @@
                                         });
                                     };
                                 </script>
-                    
+                            {% endif %}
                         {% endfor %}
                     {% endfor %}
                     

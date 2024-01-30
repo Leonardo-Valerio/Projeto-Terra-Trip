@@ -164,7 +164,7 @@ html, body {
     margin-top: 5vh;
 }
 .legenda{
-    width: 90%;
+    width: 95%;
     font-weight: bold;
     font-size: larger;
     margin-bottom: 5vh;
@@ -172,7 +172,7 @@ html, body {
     line-height: 3vh;
 }
 .descricao{
-    width: 90%;
+    width: 95%;
     text-indent: 2em;
     line-height: 4vh;
     font-size: large;
@@ -249,35 +249,70 @@ footer{
     text-align: center;
 }
 .box-pontos{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
 }
 .box-cidade{
-    text-align: start;
+    width: 95%;
 }
+
 .nome-cidade{
-    width: 90%;
     font-weight: bold;
     font-size: 2vw;
     margin-bottom: 5vh;
+    border-bottom: 1px solid var(--marrom);
     
 }
+.nome-ponto{
+    border-bottom: 1px solid var(--azul2);
+    font-size: 2vw;
+    margin-bottom: 5vh;
+}
 .legenda-cidade{
-    width: 90%;
     text-indent: 2em;
     line-height: 4vh;
     font-size: large;
     margin-bottom: 5vh;
 }
 
+.legenda-pontos{
+    width: 60%;
+    text-indent: 2em;
+    line-height: 4vh;
+    font-size: large;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+.box-imagens{
+    margin-bottom: 10vh;
+    display: grid;
+    grid-template-columns: 30vw 30vw;
+    grid-template-rows: 45vh 45vh;
+    gap: 20px;
+    grid-template-areas: 
+        "imagem1 imagem2"
+        "imagem3 mapa";
+}
+
 .imagem-ponto{
-    height: 200px;
-    width: 100%;
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
+}
+.imagem1{
+    grid-area: imagem1;
+}
+.imagem2{
+    grid-area: imagem2;
+}
+.imagem3{
+    grid-area: imagem3;
 }
 .mapa{
-    height: 500px;
-    width: 500px;
+    grid-area: mapa;
+    border-radius: 10px;
 }
 
 @media (max-width: 1300px) {

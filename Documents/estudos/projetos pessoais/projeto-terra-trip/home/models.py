@@ -44,7 +44,9 @@ class Cidades(models.Model):
 
 class Pontos_turisticos(models.Model):
     nome = models.CharField(max_length=100, null=False)
-    imagem = models.ImageField(upload_to='fotos_pontos-turisticos/%Y/%m/%d', blank=True)
+    imagem1 = models.ImageField(upload_to='fotos_pontos-turisticos/%Y/%m/%d', blank=True)
+    imagem2 = models.ImageField(upload_to='fotos_pontos-turisticos/%Y/%m/%d', blank=True)
+    imagem3 = models.ImageField(upload_to='fotos_pontos-turisticos/%Y/%m/%d', blank=True)
     legenda = models.CharField(max_length=250,null=False, blank=False)
     descricao = models.TextField(null=False, blank=False)
     latitude = models.CharField(null = False, max_length=250)
