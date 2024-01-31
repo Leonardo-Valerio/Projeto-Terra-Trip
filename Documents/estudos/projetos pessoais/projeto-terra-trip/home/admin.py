@@ -18,7 +18,7 @@ class listandoCidades(admin.ModelAdmin):
     search_fields=('nome',)
 
 class listandoPontos(admin.ModelAdmin):
-    list_display=('id','nome' )
+    list_display=('id','nome','cidade_relacionada' )
     list_display_links=('id', 'nome')
     search_fields=('nome',)
     
