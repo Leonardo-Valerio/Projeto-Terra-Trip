@@ -53,7 +53,7 @@ html, body {
     justify-content: center;
 }
 .titulo h1{
-    font-size: 12vw;
+    font-size: 11vw;
     color: white;
     font-weight: lighter;
 }
@@ -208,6 +208,7 @@ html, body {
 
 footer{
     text-align: center;
+    margin-top: 5vh;
 }
 .box-pontos{
     display: flex;
@@ -221,14 +222,14 @@ footer{
 
 .nome-cidade{
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 4vw;
     margin-bottom: 5vh;
     border-bottom: 1px solid var(--marrom);
     
 }
 .nome-ponto{
     border-bottom: 1px solid var(--azul2);
-    font-size: 2vw;
+    font-size: 3vw;
     margin-bottom: 5vh;
 }
 .legenda-cidade{
@@ -321,6 +322,15 @@ footer{
        
         
     }
+    .box-imagens{
+        grid-template-columns: 70vw;
+        grid-template-rows: 35vh 35vh 35vh 35vh;
+        grid-template-areas: 
+        "imagem1"
+        "imagem2"
+        "imagem3" 
+        "mapa";
+    }
     
 }
 
@@ -328,6 +338,16 @@ footer{
 
 @media (max-width:700px){
     .titulo-card{
-        font-size: 100%;
+        font-size: 5vw;
+    }
+    
+    .legenda-pontos{
+        width: 90%;
+    }
+    .nome-cidade{
+        font-size: 5vw;
+    }
+    .nome-ponto{
+        font-size: 4vw;
     }
 }

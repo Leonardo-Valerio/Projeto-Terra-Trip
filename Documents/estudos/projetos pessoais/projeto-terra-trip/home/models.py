@@ -37,7 +37,7 @@ class Paises(models.Model):
 
 class Cidades(models.Model):
     nome = models.CharField(max_length=100, null=False)
-    legenda = models.CharField(max_length=250,null=False, blank=False)
+    legenda = models.TextField(null=False, blank=False)
     pais_relacionado = models.ForeignKey(Paises, on_delete=models.CASCADE, null= True, blank=True)
     def __str__(self):
         return (self.nome)
