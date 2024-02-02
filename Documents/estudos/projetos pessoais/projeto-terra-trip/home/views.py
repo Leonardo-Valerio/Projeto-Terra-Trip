@@ -32,3 +32,6 @@ def pais(request, pais_id):
     dados_cidades = Cidades.objects.filter(pais_relacionado=item_pais)
     dados_pontos_turisticos = Pontos_turisticos.objects.filter(cidade_relacionada__in=dados_cidades)
     return render(request,'home/pais.html', {'item_pais':item_pais ,'dados_cidades':dados_cidades , 'dados_pontos_turisticos':dados_pontos_turisticos})
+
+def sobre_nos(request):
+    return render(request, 'home/sobre_nos.html')

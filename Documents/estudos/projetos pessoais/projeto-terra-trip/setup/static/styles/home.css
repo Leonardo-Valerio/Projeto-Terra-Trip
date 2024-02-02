@@ -40,11 +40,6 @@ html, body {
 .banner-home{
     background-image: url(../assets/home/banner2.jpg);
 }
-.banner-europa{
-    background-image: url(../assets/imagens-cards/europe-large.jpg);
-}
-
-
 
 .titulo{
     grid-area: box1;
@@ -225,12 +220,13 @@ footer{
     font-size: 4vw;
     margin-bottom: 5vh;
     border-bottom: 1px solid var(--marrom);
-    
+    font-weight: lighter;
 }
 .nome-ponto{
     border-bottom: 1px solid var(--azul2);
     font-size: 3vw;
     margin-bottom: 5vh;
+    
 }
 .legenda-cidade{
     text-indent: 2em;
@@ -276,6 +272,78 @@ footer{
     grid-area: mapa;
     border-radius: 10px;
 }
+
+.main-sobre-nos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-sobre-nos{
+    display: grid;
+    margin-top: 10vh;
+    grid-template-columns: 40vw 40vw;
+    grid-template-rows: 80vh;
+    gap: 5vw;
+    grid-template-areas: 
+    "titulo texto"
+    ;
+    text-align: center;
+}
+
+.titulo-sobre-nos{
+    grid-area: titulo;
+    background-image: url(../assets/home/background-sobre-nos.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+.titulo-sobre-nos h1{
+    
+    color: white;
+    font-size: 12vw;
+    font-weight: lighter;
+}
+
+.titulo-sobre-nos h5{
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    position: absolute;
+    top: 12%;
+}
+
+.texto-sobre-nos{
+    grid-area: texto;
+    border: 1px solid #025159;
+}
+.texto-sobre-nos h2{
+    color:var(--marrom);
+    border-bottom: 1px solid var(--azul3);
+    font-weight: lighter;
+}
+.texto-sobre-nos p{
+    color: black;
+    line-height: 3vw;
+    margin: 5%;
+}
+.quadro-sobre-nos{
+    
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    text-decoration:none ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3) ;
+}
+
+.quadro-sobre-nos:hover{
+    border-radius: 15px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.6) ;
+}
+
 @media (min-width:1300px){
     .menu-lateral.scroll {
         top: 0; 
@@ -331,6 +399,20 @@ footer{
         "imagem3" 
         "mapa";
     }
+
+    .section-sobre-nos{
+        grid-template-columns: 80vw;
+        grid-template-rows: 40vh 55vh;
+        grid-template-areas: 
+        "titulo"
+        "texto"
+        ;
+        
+    }
+    .texto-sobre-nos p{
+        line-height: 4vw;
+      
+    }
     
 }
 
@@ -349,5 +431,9 @@ footer{
     }
     .nome-ponto{
         font-size: 4vw;
+    }
+    .texto-sobre-nos p{
+        line-height: 5vw;
+      
     }
 }

@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+    <main class="main-sobre-nos">
+        <section class="section-sobre-nos">
+
+            <a href="{% url 'home' %}" class="titulo-sobre-nos quadro-sobre-nos">
+                <h5>Voltar para home</h5>
+                <h1 class="terra-trip-sobre-nos">Terra Trip</h1>
+            </a>
+            
+            
+            <a href="{% url 'sobre_nos' %}" class="texto-sobre-nos quadro-sobre-nos">
+                <h2>Sobre Nós</h2>
+                <p> Conectando Você ao Mundo com Experiência! Embarque em jornadas extraordinárias com a Terra Trip, sua parceira de viagens. Nossa missão é fornecer informações abrangentes sobre países, cidades, regiões e pontos turísticos, capacitando você a criar roteiros personalizados e vivenciar experiências únicas. Deixe-nos inspirar sua próxima aventura e torne cada viagem uma jornada memorável. Descubra o mundo com confiança, descubra com Terra Trip!</p>
+            </a>
+            
+        </section>
+    </main>
+{% endblock %}
