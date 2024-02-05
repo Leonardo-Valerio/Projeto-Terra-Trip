@@ -14,13 +14,17 @@
     padding: 0px;
     
 }
+html {
+    scroll-behavior: smooth;
+  }
 html, body {
-    overflow-x: hidden; /* Tenta esconder a barra de rolagem horizontal */
+    overflow-x: hidden;
 }
 
-
+/*---------------HEADER------------------*/
 .banner{
     height: 50vh;
+    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -36,11 +40,6 @@ html, body {
 .banner-home{
     background-image: url(../assets/home/banner2.jpg);
 }
-.banner-europa{
-    background-image: url(../assets/imagens-cards/europe-large.jpg);
-}
-
-
 
 .titulo{
     grid-area: box1;
@@ -49,7 +48,8 @@ html, body {
     justify-content: center;
 }
 .titulo h1{
-    font-size: 15vh;
+    font-size: 11vw;
+    color: white;
     font-weight: lighter;
 }
 
@@ -67,65 +67,15 @@ html, body {
 .menu-principal > nav > a{
     color: #ffffff;
     text-decoration: none;
+    transition-duration: 0.3s;
 }
 
 .menu-principal > nav > a:hover{
-    transition-duration: 0.3s;
     color: var(--azul2);
 }
-/*---------------------------------*/
-.banner2 {
-    position: relative;
-    height: 50vh;
-    width: 100vw;
-    overflow: hidden;
-}
 
-.header-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
+/*---------------MAIN-CARDS------------------*/
 
-.header-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.title {
-    font-family: 'Quicksand', sans-serif ;
-    margin-top: 15vh;
-    text-align: center;
-    color: white; /* ou a cor desejada para o texto */
-    font-size: 5vh;
-    font-weight: 300px;
-}
-
-.menu {
-    margin-bottom: 10px; /* ou a margem desejada */
-}
-
-.menu > nav {
-    display: flex;
-}
-
-.menu > nav > a {
-    margin: 0 10px; /* ou a margem desejada entre os links */
-    color: white; /* ou a cor desejada para os links */
-    text-decoration: none;
-}
-/*---------------------------------*/
 .principal{
     display: grid;
     grid-template-columns: 20vw 80vw;
@@ -135,20 +85,25 @@ html, body {
 }
 .menu-lateral{
     grid-area: box1;
-    background-color: var(--azul1);
+    background-color: white;
+    transition: top 0.3s;
 }
+
 .menu-lateral nav{
     display: flex;
     flex-direction: column;
+    background-color: var(--azul1);
+    
 
 }
 .menu-lateral > nav > a{
     text-decoration: none;
-    padding: 50px;
+    padding: 25px;
     color: var(--azul4);
     font-size: 3vh;
     border-bottom: 1px solid var(--azul3);
     border-right:1px solid var(--azul3) ;
+    text-align: center;
 }
 .menu-lateral > nav > a:hover{
     transition-duration: 0.3s;
@@ -161,12 +116,38 @@ html, body {
     margin-left: 5vw;
     margin-top: 5vh;
 }
+.section-cards{
+    padding-top: 10vh;
+}
+.legenda{
+    width: 95%;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 5vh;
+    text-indent: 2em;
+    line-height: 3vh;
+}
+.descricao{
+    width: 95%;
+    text-indent: 2em;
+    line-height: 4vh;
+    font-size: large;
+    margin-bottom: 5vh;
+}
+
+.titulo-topico{
+    margin-top: 3vh;
+}
 
 .lista-de-cards{
     margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .cards{
     list-style: none;
+   
     
 }
 .card{
@@ -180,6 +161,7 @@ html, body {
     border-radius:10px;
     margin-right: 2vw;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .img-card{
     border-radius:10px;
@@ -208,15 +190,264 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Altere a opacidade (o último valor) conforme necessário */
+    background-color: rgba(0, 0, 0, 0); 
     z-index: 1;
     transition: background-color 0.3s ease-in-out;
+    
 }
 
 .card:hover::before {
-    background-color: rgba(0, 0, 0, 0.8); /* Altere a opacidade (o último valor) conforme necessário */
+    background-color: rgba(0, 0, 0, 0.8); 
+    
 }
+
+
+/*---------------MAIN PAISES------------------*/
+.box-pontos{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.box-cidade{
+    width: 95%;
+}
+
+.nome-cidade{
+    font-weight: bold;
+    font-size: 4vw;
+    margin-bottom: 5vh;
+    border-bottom: 1px solid var(--marrom);
+    font-weight: lighter;
+}
+.nome-ponto{
+    border-bottom: 1px solid var(--azul2);
+    font-size: 3vw;
+    margin-bottom: 5vh;
+    
+}
+.legenda-cidade{
+    text-indent: 2em;
+    line-height: 4vh;
+    font-size: large;
+    margin-bottom: 5vh;
+}
+
+.legenda-pontos{
+    width: 60%;
+    text-indent: 2em;
+    line-height: 4vh;
+    font-size: large;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+.box-imagens{
+    margin-bottom: 10vh;
+    display: grid;
+    grid-template-columns: 30vw 30vw;
+    grid-template-rows: 45vh 45vh;
+    gap: 20px;
+    grid-template-areas: 
+        "imagem1 imagem2"
+        "imagem3 mapa";
+}
+
+.imagem-ponto{
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+.imagem1{
+    grid-area: imagem1;
+}
+.imagem2{
+    grid-area: imagem2;
+}
+.imagem3{
+    grid-area: imagem3;
+}
+.mapa{
+    grid-area: mapa;
+    border-radius: 10px;
+}
+/*---------------MAIN SOBRE NÓS------------------*/
+.main-sobre-nos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-sobre-nos{
+    display: grid;
+    margin-top: 10vh;
+    grid-template-columns: 40vw 40vw;
+    grid-template-rows: 80vh;
+    gap: 5vw;
+    grid-template-areas: 
+    "titulo texto"
+    ;
+    text-align: center;
+}
+
+.titulo-sobre-nos{
+    grid-area: titulo;
+    background-image: url(../assets/home/background-sobre-nos.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+.titulo-sobre-nos h1{
+    
+    color: white;
+    font-size: 12vw;
+    font-weight: lighter;
+}
+
+.titulo-sobre-nos h5{
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    position: absolute;
+    top: 12%;
+}
+
+.texto-sobre-nos{
+    grid-area: texto;
+    border: 1px solid #025159;
+}
+.texto-sobre-nos h2{
+    color:var(--marrom);
+    border-bottom: 1px solid var(--azul3);
+    font-weight: lighter;
+}
+.texto-sobre-nos p{
+    color: black;
+    line-height: 3vw;
+    margin: 5%;
+}
+.quadro-sobre-nos{
+    
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    text-decoration:none ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3) ;
+}
+
+.quadro-sobre-nos:hover{
+    border-radius: 15px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.6) ;
+}
+/*---------------FOOTER------------------*/
 
 footer{
     text-align: center;
+    margin-top: 5vh;
+}
+
+.link-perfil{
+    color: var(--marrom);
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+.link-perfil:hover{
+    color: var(--azul3);
+}
+
+
+@media (min-width:1300px){
+    .menu-lateral.scroll {
+        top: 0; 
+        position: fixed;
+        left: 0;
+        width: 20vw;
+      }
+}
+
+@media (max-width: 1300px) {
+    .lista-de-cards{
+        width: 100%;
+    }
+    .cards {
+        width: 50%;
+    }
+    .card{
+        width: 90%;
+        height: 90%;
+    }
+    .titulo-card{
+        font-size: 4vw;
+    }
+    .principal{
+        display: block;
+    }
+    .menu-lateral nav{
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 1px solid var(--azul3);
+        align-items: center;
+        background-color: #ffffff;
+        border: none;
+        
+        
+    }
+    .menu-lateral > nav > a{
+        text-decoration: none;
+        padding: 3vw;
+        color: var(--azul4);
+        font-size: 3vw;
+        width: 100%;
+        text-align: center;
+       
+        
+    }
+    .box-imagens{
+        grid-template-columns: 70vw;
+        grid-template-rows: 35vh 35vh 35vh 35vh;
+        grid-template-areas: 
+        "imagem1"
+        "imagem2"
+        "imagem3" 
+        "mapa";
+    }
+
+    .section-sobre-nos{
+        grid-template-columns: 80vw;
+        grid-template-rows: 40vh 55vh;
+        grid-template-areas: 
+        "titulo"
+        "texto"
+        ;
+        
+    }
+    .texto-sobre-nos p{
+        line-height: 4vw;
+      
+    }
+    
+}
+
+
+
+@media (max-width:700px){
+    .titulo-card{
+        font-size: 5vw;
+    }
+    
+    .legenda-pontos{
+        width: 90%;
+    }
+    .nome-cidade{
+        font-size: 5vw;
+    }
+    .nome-ponto{
+        font-size: 4vw;
+    }
+    .texto-sobre-nos p{
+        line-height: 5vw;
+      
+    }
 }
