@@ -1,11 +1,9 @@
 # Sumário
 1. [Sobre o Projeto](#sobre-o-projeto)
-    - 1.1 [Modelos de Dados](#modelos-de-dados)
-    - 1.2 [Funcionalidades Principais](#funcionalidades-principais)
-2. [Como Executar Localmente](#como-executar-localmente)
-    - 2.1 [Instruções de Instalação](#instruções-de-instalação)
-    - 2.2 [Acesso ao Admin](#acesso-ao-admin)
-    
+
+2. [Como Executar Localmente](#como-executar-o-projeto-localmente)
+
+3. [Link do projeto no Vercel](#link-do-projeto-no-vercel)
 
 
 
@@ -80,3 +78,5 @@ python manage.py runserver
 
 8. **Explore o Terra Trip:**
 - Acesse `http://127.0.0.1:8000/` e comece a explorar o Terra Trip!
+
+### Link do projeto no Vercel
