@@ -30,6 +30,7 @@ class Paises(models.Model):
     primavera=models.BooleanField(default=False)
     choque_cultural=models.BooleanField(default=False)
     historicos=models.BooleanField(default=False)
+    presente_na_home=models.BooleanField(default=False)
     
     def __str__(self):
         return (self.nome)

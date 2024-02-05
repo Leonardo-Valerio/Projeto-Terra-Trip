@@ -12,6 +12,20 @@
         <section class="categorias">
             <div class="box">
                 {% include 'home/partials/_exibir-cards.html' with titulo='Por continentes' dados=dados url_nome='continente' %}
+
+                {% include 'home/partials/_exibir-cards.html' with id=1 titulo='Os mais queridinhos' dados=dados_paises_populares_home url_nome='pais' %}
+
+                {% include 'home/partials/_exibir-cards.html' with id=2 titulo='Para os amantes de história' dados=dados_paises_historicos_home url_nome='pais' %}
+
+                {% include 'home/partials/_exibir-cards.html' with id=3 titulo='Para sentir um choque cultural' dados=dados_paises_choque_cultural_home url_nome='pais' %}
+
+                {% include 'home/partials/_exibir-cards.html' with id=4 titulo='Para aproveitar o verão' dados=dados_paises_verao_home url_nome='pais' %}
+
+                {% include 'home/partials/_exibir-cards.html' with  id=5 titulo='Para sentir o encanto do inverno' dados=dados_paises_inverno_home url_nome='pais' %}
+
+                {% include 'home/partials/_exibir-cards.html' with id=6 titulo='Para desfrutar do colorido da primavera' dados=dados_paises_primavera_home url_nome='pais' %}
+
+                {% include 'home/partials/_exibir-cards.html' with id=7 titulo='Para admirar o laranja avermelhado do outono' dados=dados_paises_outono_home url_nome='pais' %}
             </div>
         </section>
     </main>   
