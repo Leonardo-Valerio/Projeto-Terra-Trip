@@ -67,7 +67,7 @@ html, body {
 .menu-principal > nav > a{
     color: #ffffff;
     text-decoration: none;
-    transition-duration: 0.3s;
+    transition-duration: 0.4s;
 }
 
 .menu-principal > nav > a:hover{
