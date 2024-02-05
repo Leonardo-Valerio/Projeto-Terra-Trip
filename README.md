@@ -1,3 +1,14 @@
+# Sumário
+1. [Sobre o Projeto](#sobre-o-projeto)
+    - 1.1 [Modelos de Dados](#modelos-de-dados)
+    - 1.2 [Funcionalidades Principais](#funcionalidades-principais)
+2. [Como Executar Localmente](#como-executar-localmente)
+    - 2.1 [Instruções de Instalação](#instruções-de-instalação)
+    - 2.2 [Acesso ao Admin](#acesso-ao-admin)
+    
+
+
+
 # Terra Trip - Seu Guia de Viagens
 
 Bem-vindo ao Terra Trip, seu guia de viagens personalizado! Este projeto é uma plataforma que visa fornecer informações detalhadas sobre continentes, países, cidades e pontos turísticos ao redor do mundo. 
@@ -64,5 +75,8 @@ python manage.py createsuperuser
 6. **Execute o Servidor de Desenvolvimento:**
 python manage.py runserver
 
-7. **Explore o Terra Trip:**
+7. **Acesse o Admin:**
+- Vá para `http://127.0.0.1:8000/admin/` e faça login com as credenciais do superusuário.
+
+8. **Explore o Terra Trip:**
 - Acesse `http://127.0.0.1:8000/` e comece a explorar o Terra Trip!
