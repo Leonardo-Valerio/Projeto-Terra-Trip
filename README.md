@@ -1,15 +1,16 @@
+
+# Terra Trip - Seu Guia de Viagens
+
+Bem-vindo ao Terra Trip, seu guia de viagens personalizado! Este projeto é uma plataforma que visa fornecer informações detalhadas sobre continentes, países, cidades e pontos turísticos ao redor do mundo. 
+
 # Sumário
 1. [Sobre o Projeto](#sobre-o-projeto)
 
 2. [Como Executar Localmente](#como-executar-o-projeto-localmente)
 
-3. [Link do projeto no Vercel](#link-do-projeto-no-vercel)
+3. [Link do vídeo do projeto rodando](#link-do-video-do-projeto)
 
-
-
-# Terra Trip - Seu Guia de Viagens
-
-Bem-vindo ao Terra Trip, seu guia de viagens personalizado! Este projeto é uma plataforma que visa fornecer informações detalhadas sobre continentes, países, cidades e pontos turísticos ao redor do mundo. 
+4. [Imagens do projeto](#imagens-do-projeto)
 
 ## Sobre o Projeto
 
@@ -79,4 +80,27 @@ python manage.py runserver
 8. **Explore o Terra Trip:**
 - Acesse `http://127.0.0.1:8000/` e comece a explorar o Terra Trip!
 
-### Link do projeto no Vercel
+### Link do vídeo do projeto
+https://www.youtube.com/watch?v=TxYkxNebk5g
+### Imagens do projeto
+- **Home**
+![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/3c3f27f8-e4a8-4850-9e1c-5f81b7791a82)
+![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/15d4f3b4-af76-462e-bc06-fef0777a601e)
+
+- **Ao clicar no card do continente é levado para essa página dos países filtrado pelo continente selecionado**
+![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/a5cf9268-d1af-49be-9458-e1a0b3f90d9f)
+![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/56badaee-7d01-46f8-b4dc-8bfd7996f399)
+
+- **Ao clicar no card do país é levado para essa página do país onde mostra as principais cidades e atrações filtrado pelo país selecionado**
+![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/1c947a64-0f19-460a-82c0-390699161a99)
+![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/40734f5c-65e4-478c-8953-fc51d57f862a)
+
+- **Página Sobre Nós**
+![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/e0a3f2ee-4ccc-4790-afd4-39e7ade8e279)
+
+
+
+
+
+
+
