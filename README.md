@@ -8,7 +8,7 @@ Bem-vindo ao Terra Trip, seu guia de viagens personalizado! Este projeto é uma 
 
 2. [Como Executar Localmente](#como-executar-o-projeto-localmente)
 
-3. [Link do vídeo do projeto rodando](#link-do-video-do-projeto)
+3. [Link do vídeo do projeto rodando](#link-do-vídeo-do-projeto)
 
 4. [Imagens do projeto](#imagens-do-projeto)
 
