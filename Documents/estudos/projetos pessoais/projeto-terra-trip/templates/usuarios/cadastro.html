@@ -1,1 +1,28 @@
-<h1>cadastro</h1>
+{% extends 'usuarios/partials/_formulario.html' %}
+{% load static %}
+
+    {% block titulo_formulario %}
+    <div class="img-form-cadastro">
+        <h1>Cadastro</h1>
+    </div>
+    {% endblock titulo_formulario %}
+
+    {% block conteudo_formulario %}
+        <label for="id-username" class="label-acesso">
+            <p>User</p>
+            <input type="text" id="id-username" name="username" placeholder="Crie seu username">
+        </label>
+        <label for="idsenha" class="label-acesso">
+            <p>Senha</p>
+            <input type="text" id="id-senha" name="senha" placeholder="Crie sua senha">
+        </label>
+        <label for="id-senha-confirmar" class="label-acesso">
+            <p>Confirme sua senha</p>
+            <input type="text" id="id-senha-confirmar" name="confirmar-senha" placeholder="Confirme sua senha">
+        </label>
+        <label for="id-email" class="label-acesso">
+            <p>E-mail</p>
+            <input type="text" id="id-email" name="email" placeholder="Digite seu e-mail">
+        </label>
+        <button class="botao-acesso" type="submit">Criar conta</button>
+    {% endblock conteudo_formulario %}

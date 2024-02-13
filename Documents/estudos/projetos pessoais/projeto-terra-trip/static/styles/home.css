@@ -67,7 +67,7 @@ html, body {
 .menu-principal > nav > a{
     color: #ffffff;
     text-decoration: none;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
 }
 
 .menu-principal > nav > a:hover{
@@ -355,6 +355,62 @@ footer{
 }
 .link-perfil:hover{
     color: var(--azul3);
+}
+
+/*-----------------LOGIN---------------*/
+
+.main-login{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-form{
+    text-align: center;
+    width: 60vw;
+    height: 60vh;
+    background-color: #BC6493;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+}
+.img-form-login{
+    background-image: url('../assets/usuarios/bg-2.jpg');
+    background-size: cover;
+    width: 50%;
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formulario{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.formulario input{
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    width: 50%;
+    margin-top: 5px;
+}
+.formulario input:hover{
+    border-radius: 15px;
+}
+.div-form h1{
+    color: white;
+    font-weight: lighter;
+    font-size: 5vw;
+}
+.label-acesso{
+    width: 100%;
 }
 
 

@@ -1,1 +1,20 @@
-<h1>login</h1>
+{% extends 'usuarios/partials/_formulario.html' %}
+{% load static %}
+    
+    {% block titulo_formulario %}
+    <div class="img-form-login">
+        <h1>Login</h1>
+    </div>
+    {% endblock titulo_formulario %}
+
+    {% block conteudo_formulario %}
+    <label for="id-username" class="label-acesso">
+        <p>User</p>
+        <input type="text" id="id-username" name="username" placeholder="Crie seu username">
+    </label>
+    <label for="idsenha" class="label-acesso">
+        <p>Senha</p>
+        <input type="text" id="id-senha" name="senha" placeholder="Crie sua senha">
+    </label>
+    <button class="botao-acesso" type="submit">Entrar</button>
+    {% endblock conteudo_formulario %}
