@@ -423,6 +423,10 @@ footer{
 .label-acesso{
     width: 100%;
     color: white;
+    display: block;
+}
+.campo-texto{
+    width: 100%;
 }
 .botao-acesso{
     padding: 20px;
@@ -529,15 +533,22 @@ footer{
 @media (max-width:900px){
     .div-form{
         flex-direction: column;
+
     }
-    .img-form-login{
+    .img-form-login, .img-form-cadastro{
         width: 100%;
         height: 30%;
         border-radius: 20px 20px 0px 0px;
     }
     .formulario{
         width: 100%;
-        height: 60%;
+        height: 80%;
+    }
+    .formulario input{
+        padding: 2vw;
+    }
+    .botao-acesso{
+        padding: 2vw;
     }
 }
 

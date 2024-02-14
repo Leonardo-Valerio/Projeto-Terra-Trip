@@ -1,23 +1,21 @@
 {% extends 'home/base.html' %}
 {% load static %}
-<style>
-    .main-login .menu-principal{
-        background-color: aqua;
-        height: 50px;
-        width: 50px;
-    }
-</style>
 
 {% block content %}
 
 <main class="main-login">
     {% include 'home/partials/_header.html' %}
     <div class="div-form">
-        {% block titulo_formulario %}
-        
-        {% endblock titulo_formulario %}
+        {% block titulo_formulario %}{% endblock titulo_formulario %}
         <form class="formulario">
-            {% block conteudo_formulario %}{% endblock conteudo_formulario %}
+            {% csrf_token %}
+            {% for field in forms.visible_fields %}
+                <div class="campo-texto">
+                    <label class="label-acesso" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            {% block titulo_botao %}{% endblock titulo_botao %}
         </form>
     </div>
 </main>
