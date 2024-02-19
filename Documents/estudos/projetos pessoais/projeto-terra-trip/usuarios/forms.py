@@ -5,6 +5,7 @@ class LoginForm(forms.Form):
         label="Username",
         required=True,
         max_length=100,
+        min_length=5,
         widget=forms.TextInput(
             attrs={
                 "placeholder": "Digite o nome de login"
@@ -15,6 +16,7 @@ class LoginForm(forms.Form):
         label="Senha",
         required=True,
         max_length=70,
+        min_length=5,
         widget=forms.PasswordInput(
             attrs={
                 "placeholder": "Digite sua senha"
@@ -27,6 +29,7 @@ class CadastroForm(forms.Form):
         label="Username",
         required=True,
         max_length=100,
+        min_length=5,
         widget=forms.TextInput(
             attrs={
                 "placeholder":"Digite o nome para login"
@@ -37,6 +40,7 @@ class CadastroForm(forms.Form):
         label="Senha",
         required=True,
         max_length=70,
+        min_length=5,
         widget=forms.PasswordInput(
             attrs={
                 "placeholder":"Crie sua senha"
@@ -47,6 +51,7 @@ class CadastroForm(forms.Form):
         label="Confirmar senha",
         required=True,
         max_length=70,
+        min_length=5,
         widget=forms.PasswordInput(
             attrs={
                 "placeholder": "Confirme aqui a sua senha"
@@ -57,9 +62,14 @@ class CadastroForm(forms.Form):
         label="E-mail",
         required=True,
         max_length=200,
+        min_length=5,
         widget=forms.EmailInput(
             attrs={
                 "placeholder": "Ex: abcd@gmail.com"
+                
             }
         )
     )
+
+  
+          

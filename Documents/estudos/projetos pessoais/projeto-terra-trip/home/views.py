@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect
 from home.models import Continentes,Paises, Pontos_turisticos, Cidades
+from django.contrib import messages
 
 dados_continente = Continentes.objects.all()
 
@@ -44,6 +45,9 @@ def continente(request, img_id):
         })
 
 def pais(request, pais_id):
+    if not request.user.is_authenticated:
+        messages.error(request,"Para acessar essa página é necessário você fazer seu login")
+        return redirect('login')
     item_pais = get_object_or_404(Paises,pk=pais_id)
     dados_cidades = Cidades.objects.filter(pais_relacionado=item_pais)
     dados_pontos_turisticos = Pontos_turisticos.objects.filter(cidade_relacionada__in=dados_cidades)
