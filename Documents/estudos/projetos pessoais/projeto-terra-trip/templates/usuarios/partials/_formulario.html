@@ -4,10 +4,17 @@
 {% block content %}
 
 <main class="main-login">
+    {% if messages %}
+        {% for mensagem in messages %}
+            <div class="mensagem {% if mensagem.tags == 'error' %}mensagem-erro{% elif mensagem.tags == 'success' %}mensagem-sucesso{% endif %}">
+                <p >{{ mensagem }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
     {% include 'home/partials/_header.html' %}
     <div class="div-form">
         {% block titulo_formulario %}{% endblock titulo_formulario %}
-        <form class="formulario">
+        <form class="formulario" method="POST" action="{% block action  %}{% endblock action %}">
             {% csrf_token %}
             {% for field in forms.visible_fields %}
                 <div class="campo-texto">

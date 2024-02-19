@@ -455,6 +455,20 @@ footer{
 .main-login > .menu-principal > nav > a:hover{
     color: var(--azul2);
 }
+.mensagem{
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 3%;
+}
+.mensagem-erro{
+    
+    background-color: rgba(255, 0, 0, 0.547);
+    color: rgb(89, 0, 0);
+}
+.mensagem-sucesso{
+    background-color: rgba(31, 184, 4, 0.511);
+    color: rgb(2, 58, 2);
+}
 
 
 @media (min-width:1300px){

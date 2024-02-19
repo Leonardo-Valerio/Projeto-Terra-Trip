@@ -3,9 +3,11 @@
 
     {% block titulo_formulario %}
     <div class="img-form-cadastro">
-        <h1>Cadastro</h1>
+        <h1>Cadastrar</h1>
     </div>
     {% endblock titulo_formulario %}
+
+    {% block action %}{% url 'cadastro' %}{% endblock action %}
 
     {% block titulo_botao %}
         <button class="botao-acesso" type="submit">Criar conta</button>

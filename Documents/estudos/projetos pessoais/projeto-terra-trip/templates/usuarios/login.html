@@ -6,7 +6,9 @@
         <h1>Login</h1>
     </div>
     {% endblock titulo_formulario %}
-
+    
+    {% block action %}{% url 'login' %}{% endblock action %}
+    
     {% block titulo_botao %}
         
     <button class="botao-acesso" type="submit">Entrar</button>
