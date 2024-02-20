@@ -1,5 +1,5 @@
 from django.contrib import admin
-from home.models import Continentes, Paises, Pontos_turisticos, Cidades
+from apps.home.models import Continentes, Paises, Pontos_turisticos, Cidades
 
 
 class listandoCardsContinentes(admin.ModelAdmin):

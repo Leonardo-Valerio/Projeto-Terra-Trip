@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from home.models import Continentes,Paises, Pontos_turisticos, Cidades
+from apps.home.models import Continentes,Paises, Pontos_turisticos, Cidades
 from django.contrib import messages
 
 dados_continente = Continentes.objects.all()

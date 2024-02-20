@@ -1,5 +1,5 @@
 from django.urls import path
-from home.views import index, continente, pais, sobre_nos
+from apps.home.views import index, continente, pais, sobre_nos
 
 urlpatterns = [
     path('', index, name='home'),
