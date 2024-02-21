@@ -57,7 +57,28 @@
                 </div>
             </div>
         </section>
-        
+        <div class="adicionar-roteiro">
+            <a class="botao-roteiro" onclick="abrirModal()">Adicionar ao roteiro</a>
+        </div>
+        <div class="janela-modal" id="janela-modal">
+            <div class="modal" id="modal">
+                <button  class="fechar" id="fechar">X</button>
+                <p>testando</p>
+            </div>
+        </div>
+        <script>
+            function abrirModal(){
+                const janelaModal = document.getElementById('janela-modal');
+                janelaModal.classList.add('abrir')
+                const fechar = document.getElementById('fechar')
+                janelaModal.addEventListener('click',(e)=>{
+                    if(e.target.id =='janela-modal' || e.target.id =='fechar'){
+                        janelaModal.classList.remove('abrir')
+                    }
+                })
+            }
+
+        </script>
     </main>   
     
 {% endblock %}
