@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from apps.home.models import Continentes,Paises, Pontos_turisticos, Cidades
 from django.contrib import messages
+from django.shortcuts import render, redirect
+from apps.roteiros.forms import RoteiroForms
+
 
 dados_continente = Continentes.objects.all()
 
@@ -51,7 +54,15 @@ def pais(request, pais_id):
     item_pais = get_object_or_404(Paises,pk=pais_id)
     dados_cidades = Cidades.objects.filter(pais_relacionado=item_pais)
     dados_pontos_turisticos = Pontos_turisticos.objects.filter(cidade_relacionada__in=dados_cidades)
-    return render(request,'home/pais.html', {'item_pais':item_pais ,'dados_cidades':dados_cidades , 'dados_pontos_turisticos':dados_pontos_turisticos})
+    form_roteiro = RoteiroForms()
+    if request.method == 'POST':
+        form_roteiro = RoteiroForms(request.POST)
+        if form_roteiro.is_valid():
+            roteiro = form_roteiro.save(commit=False)
+            roteiro.usuario_roteiro = request.user
+            roteiro.save()
+    return render(request,'home/pais.html', {'item_pais':item_pais ,'dados_cidades':dados_cidades , 'dados_pontos_turisticos':dados_pontos_turisticos, 'form_roteiro': form_roteiro})
 
 def sobre_nos(request):
     return render(request, 'home/sobre_nos.html')
+

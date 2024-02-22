@@ -1,1 +1,7 @@
-<h1>Página Roteiro</h1>
+{% csrf_token %}
+{% for field in form.visible_fields %}
+<div class="campo-texto">
+    <label class="label-acesso" for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+</div>
+{% endfor %}

@@ -286,6 +286,8 @@ html, body {
     width: 50%;
     display: block;
     font-size: large;
+    display: block;
+    
 }
 .botao-roteiro:hover{
     color: var(--marrom);
@@ -308,8 +310,8 @@ html, body {
 
 }
 .modal{
-    height: 30vh;
-    width: 30vw;
+    
+    min-width: 30vw;
     background-color: rgba(255, 255, 255, 0.685);
     color: black;
     border-radius: 10px;
@@ -348,6 +350,21 @@ html, body {
     animation: abrirModal 0.4s;
 }
 
+.input-roteiro{
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    width: 50%;
+    margin-top: 5px;
+}
+.formulario-roteiro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
 /*---------------MAIN SOBRE NÓS------------------*/
 .main-sobre-nos{
     width: 100%;
