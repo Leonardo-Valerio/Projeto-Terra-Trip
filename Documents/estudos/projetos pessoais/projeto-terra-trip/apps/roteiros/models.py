@@ -1,4 +1,5 @@
 from django.db import models
+from apps.home.models import Paises
 from django.contrib.auth.models import User
 
 class Roteiro(models.Model):
@@ -15,3 +16,10 @@ class Roteiro(models.Model):
 
     def __str__(self):
         return (self.nome)
+    
+class Viagem(models.Model):
+    nome_pais=models.CharField(max_length=100)
+    identificador_pais = models.ForeignKey(Paises,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return (self.nome_pais)

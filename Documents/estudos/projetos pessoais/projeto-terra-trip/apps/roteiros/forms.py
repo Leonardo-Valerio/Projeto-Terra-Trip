@@ -6,6 +6,11 @@ class RoteiroForms(forms.ModelForm):
     class Meta:
         model=Roteiro
         exclude=['usuario_roteiro',]
+        labels={
+            "nome":"Nome",
+            "dias":"Dias",
+            "epoca":"Época"
+        }
         
         widgets={
             "nome": forms.TextInput(attrs={'class':'input-roteiro'}),

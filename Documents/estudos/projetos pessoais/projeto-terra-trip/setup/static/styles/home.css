@@ -283,7 +283,6 @@ html, body {
     background-color: transparent;
     border-radius: 10px;
     transition-duration: 0.5s;
-    width: 50%;
     display: block;
     font-size: large;
     display: block;
@@ -359,12 +358,60 @@ html, body {
     margin-top: 5px;
 }
 .formulario-roteiro{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 100%;
 }
+
+.box-roteiros{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.roteiros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.roteiro-card{
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.roteiro-card:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.info-roteiro{
+
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
 /*---------------MAIN SOBRE NÓS------------------*/
 .main-sobre-nos{
     width: 100%;
@@ -659,6 +706,10 @@ footer{
     .botao-acesso{
         padding: 2vw;
     }
+    .info-roteiro{
+        flex-direction: column;
+    }
+    
 }
 
 @media (max-width:700px){

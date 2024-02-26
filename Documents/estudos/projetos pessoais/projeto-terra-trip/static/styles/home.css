@@ -270,6 +270,106 @@ html, body {
     grid-area: mapa;
     border-radius: 10px;
 }
+.adicionar-roteiro{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.botao-roteiro{
+    border: 1px solid var(--azul4); 
+    color: var(--azul4);
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    width: 50%;
+    display: block;
+    font-size: large;
+    display: block;
+    
+}
+.botao-roteiro:hover{
+    color: var(--marrom);
+    border-color: var(--marrom);
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
+.janela-modal{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.616);
+    z-index: 9999;
+
+}
+.modal{
+    
+    min-width: 30vw;
+    background-color: rgba(255, 255, 255, 0.685);
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    
+}
+.fechar{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    border-radius: 50%;
+    width: 25px;
+    border: none;
+    background-color: red;
+    font-weight: bold;
+    font-size: large;
+    color: rgb(255, 255, 255);
+}
+.janela-modal.abrir{
+    display: flex;
+}
+@keyframes abrirModal{
+    from{
+        opacity: 0;
+        transform: translate3d(0,-20px,5px);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+.abrir .modal{
+    animation: abrirModal 0.4s;
+}
+
+.input-roteiro{
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    width: 50%;
+    margin-top: 5px;
+}
+.formulario-roteiro{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.roteiro-card{
+    width: 40px;
+    height: 40px;
+}
 /*---------------MAIN SOBRE NÓS------------------*/
 .main-sobre-nos{
     width: 100%;
@@ -365,20 +465,21 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .div-form{
     text-align: center;
-    width: 60vw;
-    height: 60vh;
-    background-color: #BC6493;
+    width: 70vw;
+    height: 70vh;
+    background-color: #06181C;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     border-radius: 20px;
 }
 .img-form-login{
-    background-image: url('../assets/usuarios/bg-2.jpg');
+    background-image: url('../assets/usuarios/bg-4.jpg');
     background-size: cover;
     width: 50%;
     border-radius: 20px 0px 0px 20px;
@@ -386,6 +487,16 @@ footer{
     align-items: center;
     justify-content: center;
 }
+.img-form-cadastro{
+    background-image: url('../assets/usuarios/bg-3.jpg');
+    background-size: cover;
+    width: 50%;
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .formulario{
     width: 50%;
     display: flex;
@@ -411,6 +522,52 @@ footer{
 }
 .label-acesso{
     width: 100%;
+    color: white;
+    display: block;
+}
+.campo-texto{
+    width: 100%;
+}
+.botao-acesso{
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    width: 50%;
+    border: 1px solid var(--azul1);
+    color: white;
+    font-size: large;
+
+}
+.botao-acesso:hover{
+    border-radius: 15px;
+    color: var(--azul1);
+    border-color: var(--azul1);
+}
+
+.main-login > .menu-principal{
+    margin-bottom: 20px;
+}
+
+.main-login > .menu-principal > nav > a{
+    color: var(--azul4);
+}
+.main-login > .menu-principal > nav > a:hover{
+    color: var(--azul2);
+}
+.mensagem{
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 3%;
+}
+.mensagem-erro{
+    
+    background-color: rgba(255, 0, 0, 0.547);
+    color: rgb(89, 0, 0);
+}
+.mensagem-sucesso{
+    background-color: rgba(31, 184, 4, 0.511);
+    color: rgb(2, 58, 2);
 }
 
 
@@ -484,9 +641,30 @@ footer{
       
     }
     
+    
 }
 
+@media (max-width:900px){
+    .div-form{
+        flex-direction: column;
 
+    }
+    .img-form-login, .img-form-cadastro{
+        width: 100%;
+        height: 30%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .formulario{
+        width: 100%;
+        height: 80%;
+    }
+    .formulario input{
+        padding: 2vw;
+    }
+    .botao-acesso{
+        padding: 2vw;
+    }
+}
 
 @media (max-width:700px){
     .titulo-card{
@@ -506,4 +684,5 @@ footer{
         line-height: 5vw;
       
     }
+    
 }
