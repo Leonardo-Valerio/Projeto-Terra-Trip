@@ -13,13 +13,9 @@ class Roteiro(models.Model):
     dias= models.IntegerField(null = False)
     epoca= models.CharField(max_length=10, choices=ESTACOES, null=False)
     usuario_roteiro = models.ForeignKey(User,on_delete=models.CASCADE)
+    grupo_paises = models.JSONField(null=True, blank=True, default=list)
 
     def __str__(self):
         return (self.nome)
     
-class Viagem(models.Model):
-    nome_pais=models.CharField(max_length=100)
-    identificador_pais = models.ForeignKey(Paises,on_delete=models.CASCADE)
-
-    def __str__(self):
-        return (self.nome_pais)
+    

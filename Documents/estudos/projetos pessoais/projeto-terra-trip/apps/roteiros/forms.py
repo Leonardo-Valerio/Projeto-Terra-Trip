@@ -5,7 +5,7 @@ from apps.roteiros.models import Roteiro
 class RoteiroForms(forms.ModelForm):
     class Meta:
         model=Roteiro
-        exclude=['usuario_roteiro',]
+        exclude=['usuario_roteiro','grupo_paises',]
         labels={
             "nome":"Nome",
             "dias":"Dias",

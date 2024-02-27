@@ -3,7 +3,7 @@ from apps.home.models import Continentes,Paises, Pontos_turisticos, Cidades
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from apps.roteiros.forms import RoteiroForms
-from apps.roteiros.models import Roteiro,Viagem
+from apps.roteiros.models import Roteiro
 
 
 dados_continente = Continentes.objects.all()
@@ -62,6 +62,7 @@ def pais(request, pais_id):
             roteiro = form_roteiro.save(commit=False)
             roteiro.usuario_roteiro = request.user
             roteiro.save()
+    
     roteiros = Roteiro.objects.filter(usuario_roteiro=request.user)
     return render(request,'home/pais.html', {'item_pais':item_pais ,'dados_cidades':dados_cidades , 'dados_pontos_turisticos':dados_pontos_turisticos, 'form_roteiro': form_roteiro, "roteiros":roteiros})
 

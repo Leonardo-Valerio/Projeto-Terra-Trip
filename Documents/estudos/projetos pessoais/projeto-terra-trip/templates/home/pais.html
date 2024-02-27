@@ -66,7 +66,7 @@
                 <section class="box-roteiros" id="roteiros">
                     <div class="roteiros">
                         {% for roteiro in roteiros %}
-                            <div class="roteiro-card">
+                            <a href="{% url 'roteiros' item_pais.id roteiro.id %}" class="roteiro-card">
                                 <div class="info-roteiro">
                                     <h2>{{ roteiro.nome }}</h2>
                                 </div>
@@ -78,10 +78,12 @@
                                     <h4>Época do ano:</h4>
                                     <p>{{ roteiro.epoca }}</p>
                                 </div>
-                            </div>
+                                
+                            </a>
+                            
                         {% endfor %}
                     </div>
-                    <button class="botao-roteiro" onclick="abrirForm()" style="margin-top: 25px;" >Criar roteiro</button>
+                    <button class="botao-roteiro" onclick="abrirForm()" style="margin-top: 25px;" >Novo roteiro</button>
                 </section>
                 
                
