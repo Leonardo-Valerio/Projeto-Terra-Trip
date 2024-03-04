@@ -1,9 +1,36 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
 {% for pais in roteiro.grupo_paises %}
 
 <p>{{ roteiro.nome }}</p>
 <p>{{ pais.nome }}</p>
 
 <img class="img-card" src="{{ pais.imagem }}" alt="" style="height: 300px; width: 400px;">
-<div style="background-image: url('{{ pais.imagem }}'); height: 300px; width: 400px;"><p>{{ pais.imagem }}</p></div>
-
+<div style="background-image: url('{{ pais.imagem }}'); height: 300px; width: 400px;"></div>
 {% endfor %}
+<form method="post" id="gerar-roteiro-form">
+    {% csrf_token %}
+    {{ gerar_roteiro_form.as_p }}
+    {% if roteiro.roteiro_gerado %}
+        <button type="submit" id="gerar-roteiro-button">Atualizar roteiro através de IA</button>
+    {% else %}
+        <button type="submit" id="gerar-roteiro-button">Gerar roteiro através de IA</button>
+    {% endif %}
+    <div id="loading" style="display: none;">Gerando roteiro...</div>
+</form>
+
+<p>{{ roteiro.roteiro_gerado }}</p>
+
+
+<script>
+    $(document).ready(function() {
+        $('#gerar-roteiro-form').submit(function() {
+            $('#gerar-roteiro-button').hide();
+            $('#loading').show();
+        });
+    });
+    </script>
+
+{% endblock %}

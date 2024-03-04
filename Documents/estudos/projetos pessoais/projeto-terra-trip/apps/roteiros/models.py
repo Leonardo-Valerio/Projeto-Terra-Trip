@@ -14,6 +14,7 @@ class Roteiro(models.Model):
     epoca= models.CharField(max_length=10, choices=ESTACOES, null=False)
     usuario_roteiro = models.ForeignKey(User,on_delete=models.CASCADE)
     grupo_paises = models.JSONField(null=True, blank=True, default=list)
+    roteiro_gerado = models.TextField(null = True, blank = True)
 
     def __str__(self):
         return (self.nome)
