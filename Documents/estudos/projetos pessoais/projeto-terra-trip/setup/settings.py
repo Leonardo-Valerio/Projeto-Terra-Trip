@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.home',
     'apps.usuarios',
     'apps.roteiros',
+    'openai',
     
 ]
 

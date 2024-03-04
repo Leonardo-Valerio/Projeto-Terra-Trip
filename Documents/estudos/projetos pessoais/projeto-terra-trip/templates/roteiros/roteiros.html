@@ -1,4 +1,9 @@
+{% for pais in roteiro.grupo_paises %}
+
 <p>{{ roteiro.nome }}</p>
 <p>{{ pais.nome }}</p>
 
-<p>{{ roteiro.grupo_paises }}</p>
+<img class="img-card" src="{{ pais.imagem }}" alt="" style="height: 300px; width: 400px;">
+<div style="background-image: url('{{ pais.imagem }}'); height: 300px; width: 400px;"><p>{{ pais.imagem }}</p></div>
+
+{% endfor %}
