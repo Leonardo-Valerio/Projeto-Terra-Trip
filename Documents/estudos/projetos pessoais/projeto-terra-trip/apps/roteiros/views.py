@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from apps.roteiros.forms import RoteiroForms, GerarRoteiroForm
 from apps.roteiros.models import Roteiro
 from apps.home.models import Paises
+from django.contrib import messages
 import openai
 import os
 import dotenv
@@ -11,7 +12,9 @@ import time
 
 
 def roteiros(request, roteiro_id, pais_id=None):
-
+    if not request.user.is_authenticated:
+        messages.error(request,"Para acessar essa página é necessário você fazer seu login")
+        return redirect('login')
     pais = None
     roteiro = get_object_or_404(Roteiro,pk=roteiro_id)
     if pais_id is not None:
@@ -106,6 +109,9 @@ def roteiros(request, roteiro_id, pais_id=None):
     return render(request, 'roteiros/roteiros.html', {'pais':pais, 'roteiro':roteiro, 'gerar_roteiro_form':gerar_roteiro_form})
 
 def todos_os_roteiros(request):
+    if not request.user.is_authenticated:
+        messages.error(request,"Para acessar essa página é necessário você fazer seu login")
+        return redirect('login')
     roteiros = Roteiro.objects.filter(usuario_roteiro=request.user)
     form_roteiro = RoteiroForms()
     if request.method == 'POST':
