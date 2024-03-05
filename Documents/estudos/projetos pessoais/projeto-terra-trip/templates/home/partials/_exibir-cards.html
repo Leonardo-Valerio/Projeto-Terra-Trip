@@ -7,7 +7,12 @@
                 {% for item in dados %}
                     <li class="cards">
                         <a href="{% url url_nome item.id %}" class="card">
-                            <img class="img-card" src="{{ item.imagem.url }}" alt="">
+                            {% if page %}
+                                <img class="img-card" src="{{ item.imagem }}" alt="">
+                                
+                            {% else %}
+                                <img class="img-card" src="{{ item.imagem.url }}" alt="">
+                            {% endif %}
                             <p class="titulo-card">{{ item.nome }}</p>
                         </a>
                     </li>

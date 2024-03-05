@@ -1,0 +1,55 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<header class="banner banner-todos-roteiros" >
+    <div class="titulo">
+        <h1>Roteiros</h1>
+    </div>
+    {% include 'home/partials/_header.html' %}
+</header>
+<main class="main-todos-roteiros">
+    <section class="exibindo-roteiros">
+        {% for roteiro in roteiros %}
+        <a href="{% url 'roteiros' roteiro.id %}" class="roteiro-card">
+            <div class="info-roteiro">
+                <h2>{{ roteiro.nome }}</h2>
+            </div>
+            <div class="info-roteiro">
+                <h4>Dias:</h4>
+                <p>{{ roteiro.dias }}</p>
+            </div>
+            <div class="info-roteiro">
+                <h4>Época do ano:</h4>
+                <p>{{ roteiro.epoca }}</p>
+            </div>
+        
+        </a>
+        
+        {% endfor %}
+    </section>
+
+    <section class="formulario-todos-roteiros">
+        <button class="botao-roteiro" onclick="abrirForm()" style="margin-top: 25px;">Novo roteiro</button>
+        <form class="formulario-roteiro" id="formulario-roteiro" style="display: none;" method="POST" >
+            {% csrf_token %}
+            {% for field in form_roteiro.visible_fields %}
+                <div class="campo-texto">
+                    <label class="label-acesso" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+        
+            <button class="botao-roteiro" style="margin-top: 25px;" type="submit">Criar roteiro</button>
+        </form>
+    </section>
+</main>
+<script>
+    function abrirForm(){
+        const formulario = document.getElementById('formulario-roteiro')
+        formulario.style.display = 'flex'
+        
+    }
+</script>
+
+
+{% endblock %}

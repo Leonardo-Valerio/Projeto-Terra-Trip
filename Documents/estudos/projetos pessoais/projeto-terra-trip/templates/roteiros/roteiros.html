@@ -2,26 +2,48 @@
 {% load static %}
 {% block content %}
 
-{% for pais in roteiro.grupo_paises %}
 
-<p>{{ roteiro.nome }}</p>
-<p>{{ pais.nome }}</p>
-
-<img class="img-card" src="{{ pais.imagem }}" alt="" style="height: 300px; width: 400px;">
-<div style="background-image: url('{{ pais.imagem }}'); height: 300px; width: 400px;"></div>
-{% endfor %}
-<form method="post" id="gerar-roteiro-form">
-    {% csrf_token %}
-    {{ gerar_roteiro_form.as_p }}
+<header class="banner banner-roteiros" >
+    <div class="titulo">
+        <h1>{{ roteiro.nome }}</h1>
+    </div>
+    {% include 'home/partials/_header.html' %}
+</header>
+<main class="main-roteiros">
+    
+    <section class="exibicao-paises-roteiros">
+        
+        {% include 'home/partials/_exibir-cards.html' with titulo='Países do roteiro' dados=roteiro.grupo_paises url_nome='pais' page='roteiro' %}
+    </section>
+    <div class="informacoes-roteiro">
+        <div class="info-roteiro">
+            <h4>Dias:</h4>
+            <p>{{ roteiro.dias }}</p>
+        </div>
+        <div class="info-roteiro">
+            <h4>Época do ano:</h4>
+            <p>{{ roteiro.epoca }}</p>
+        </div>
+    </div>
+    <section class="section-botao-roteiro">
+        <form method="post" id="gerar-roteiro-form">
+            {% csrf_token %}
+            {{ gerar_roteiro_form.as_p }}
+            {% if roteiro.roteiro_gerado %}
+                <button type="submit" class="botao-roteiro" id="gerar-roteiro-button">Atualizar roteiro através de IA</button>
+            {% else %}
+                <button type="submit" class="botao-roteiro" id="gerar-roteiro-button">Gerar roteiro através de IA</button>
+            {% endif %}
+            <div id="loading" style="display: none;">Gerando roteiro...</div>
+        </form>
+    </section>
     {% if roteiro.roteiro_gerado %}
-        <button type="submit" id="gerar-roteiro-button">Atualizar roteiro através de IA</button>
-    {% else %}
-        <button type="submit" id="gerar-roteiro-button">Gerar roteiro através de IA</button>
+        <div class="box-ia">
+            <h2>Roteiro</h2>
+            <p class="texto-ia">{{ roteiro.roteiro_gerado }}</p>
+        </div>
     {% endif %}
-    <div id="loading" style="display: none;">Gerando roteiro...</div>
-</form>
-
-<p>{{ roteiro.roteiro_gerado }}</p>
+</main>
 
 
 <script>

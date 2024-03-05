@@ -10,16 +10,19 @@ import time
 
 
 
-def roteiros(request, roteiro_id, pais_id):
-    
+def roteiros(request, roteiro_id, pais_id=None):
+
+    pais = None
     roteiro = get_object_or_404(Roteiro,pk=roteiro_id)
-    pais = get_object_or_404(Paises,pk=pais_id)   
-    for item in roteiro.grupo_paises:
-        if item["nome"] == pais.nome:
-            break
-    else:
-        roteiro.grupo_paises.append({"nome":pais.nome,"imagem":pais.imagem.url})
-        roteiro.save()
+    if pais_id is not None:
+        pais = get_object_or_404(Paises,pk=pais_id)   
+    if pais is not None:
+        for item in roteiro.grupo_paises:
+            if item["nome"] == pais.nome:
+                break
+        else:
+            roteiro.grupo_paises.append({"id":pais_id,"nome":pais.nome,"imagem":pais.imagem.url})
+            roteiro.save()
 
     gerar_roteiro_form = GerarRoteiroForm(request.POST or None)
     if gerar_roteiro_form.is_valid():
@@ -46,6 +49,21 @@ def roteiros(request, roteiro_id, pais_id):
             3. SOMENTE quando a distância entre um país para o outro for superior a 3 mil km, crie um roteiro separado para cada país, utilizando o período designado para cada um.
 
             4. Se o tempo disponível for insuficiente para todos os destinos, apresente uma versão mais condensada do roteiro para uma experiência de viagem melhor.
+
+            *Exemplo:*
+            * Países desejados: Brasil, Portugal, Argentina, Espanha
+            * Dias disponíveis: 20 dias
+            * Estação do ano: Verão
+
+            *Resultado Esperado do exemplo:*
+            Explicação: Tive que separar os paises em roteiros diferentes pela logica de logistica para ter uma viagem com mais sentido de rota
+            Roteiro para Brasil e Argentina(20 dias)
+            1. Brasil  (10 dias): [Explicação detalhada de Recomendações detalhadas para pontos turísticos no verão]
+            2. Argentina (10 dias): [Explicação detalhada de Recomendações para pontos turísticos no verão]
+            Roteiro para Portugal e Espanha(20 dias)
+            1. Portugal  (10 dias): [Explicação detalhada de Recomendações detalhadas para pontos turísticos no verão]
+            2. Espanha (10 dias): [Explicação detalhada de Recomendações detalhadas para pontos turísticos no verão]
+
         """
 
         tentativas = 0
@@ -87,3 +105,14 @@ def roteiros(request, roteiro_id, pais_id):
 
     return render(request, 'roteiros/roteiros.html', {'pais':pais, 'roteiro':roteiro, 'gerar_roteiro_form':gerar_roteiro_form})
 
+def todos_os_roteiros(request):
+    roteiros = Roteiro.objects.filter(usuario_roteiro=request.user)
+    form_roteiro = RoteiroForms()
+    if request.method == 'POST':
+        form_roteiro = RoteiroForms(request.POST)
+        if form_roteiro.is_valid():
+            roteiro = form_roteiro.save(commit=False)
+            roteiro.usuario_roteiro = request.user
+            roteiro.save()
+    
+    return render(request, 'roteiros/todos-roteiros.html',{'roteiros':roteiros,'form_roteiro':RoteiroForms})

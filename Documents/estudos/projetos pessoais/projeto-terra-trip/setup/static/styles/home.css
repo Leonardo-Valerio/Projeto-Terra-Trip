@@ -61,8 +61,9 @@ html, body {
 }
 .menu-principal nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 10vw;
+    flex-wrap: wrap;
 }
 .menu-principal > nav > a{
     color: #ffffff;
@@ -137,6 +138,9 @@ html, body {
 
 .titulo-topico{
     margin-top: 3vh;
+    font-size: 5vh;
+    color: var(--marrom);
+    font-weight: 500;
 }
 
 .lista-de-cards{
@@ -480,9 +484,11 @@ html, body {
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3) ;
+    cursor: default;
 }
 
-.quadro-sobre-nos:hover{
+.quadro-sobre-nos-link:hover{
+    cursor: pointer;
     border-radius: 15px;
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.6) ;
 }
@@ -615,7 +621,89 @@ footer{
     color: rgb(2, 58, 2);
 }
 
+/*-----------------pagina-roteiros---------------*/
 
+.banner-roteiros{
+    background-image: url(../assets/roteiros/bg-roteiros.jpg);
+}
+
+.main-roteiros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.exibicao-paises-roteiros{
+    width: 70vw;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.box-ia{
+    margin-top: 4vw;
+    width: 70vw;
+    text-align: center;
+}
+.box-ia h2{
+    font-weight: lighter;
+    color: #A67458;
+    font-size: 3vw;
+}
+
+.section-botao-roteiro{
+    margin-top: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.informacoes-roteiro{
+    margin-top: 4vw;
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    
+}
+.texto-ia{
+    margin-top: 2vw;
+    line-height: 4vh;
+}
+
+/*-----------------main-todos-roteiros---------------*/
+
+.banner-todos-roteiros{
+    background-image: url(../assets/roteiros/bg-todos-os-roteiros.jpg);
+}
+
+.main-todos-roteiros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.exibindo-roteiros{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.formulario-todos-roteiros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.formulario-todos-roteiros .input-roteiro{
+    border: 1px solid #025159;
+}
+.formulario-todos-roteiros label{
+    color: #A67458;
+}
 @media (min-width:1300px){
     .menu-lateral.scroll {
         top: 0; 
