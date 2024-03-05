@@ -122,3 +122,15 @@ def todos_os_roteiros(request):
             roteiro.save()
     
     return render(request, 'roteiros/todos-roteiros.html',{'roteiros':roteiros,'form_roteiro':RoteiroForms})
+
+def editar_roteiro(request, roteiro_id):
+    roteiro = Roteiro.objects.get(id=roteiro_id)
+    formulario_edit = RoteiroForms(instance=roteiro)
+    if request.method == 'POST':
+        formulario_edit = RoteiroForms(request.POST,instance=roteiro)
+        if formulario_edit.is_valid():
+            roteiro = formulario_edit.save(commit=False)
+            roteiro.usuario_roteiro = request.user
+            roteiro.save()
+            return redirect('todos_roteiros')
+    return render(request,'roteiros/editar_roteiro.html', {'form_roteiro': formulario_edit, 'roteiro_id':roteiro_id})

@@ -1,0 +1,29 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<header class="banner banner-todos-roteiros" >
+    <div class="titulo">
+        <h1>Roteiros</h1>
+    </div>
+    {% include 'home/partials/_header.html' %}
+</header>
+<main class="main-todos-roteiros">
+    
+    <section class="formulario-todos-roteiros">
+        <form class="formulario-roteiro" id="formulario-roteiro" style="display: flex;" method="POST" >
+            {% csrf_token %}
+            {% for field in form_roteiro.visible_fields %}
+                <div class="campo-texto">
+                    <label class="label-acesso" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+        
+            <button class="botao-roteiro" style="margin-top: 25px;" type="submit">Confirmar</button>
+        </form>
+    </section>
+</main>
+
+
+
+{% endblock %}

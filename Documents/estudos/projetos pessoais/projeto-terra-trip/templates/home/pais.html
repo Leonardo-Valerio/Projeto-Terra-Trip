@@ -66,20 +66,23 @@
                 <section class="box-roteiros" id="roteiros">
                     <div class="roteiros">
                         {% for roteiro in roteiros %}
-                            <a href="{% url 'roteiros_com_pais' item_pais.id roteiro.id %}" class="roteiro-card">
-                                <div class="info-roteiro">
-                                    <h2>{{ roteiro.nome }}</h2>
-                                </div>
-                                <div class="info-roteiro">
-                                    <h4>Dias:</h4>
-                                    <p>{{ roteiro.dias }}</p>
-                                </div>
-                                <div class="info-roteiro">
-                                    <h4>Época do ano:</h4>
-                                    <p>{{ roteiro.epoca }}</p>
-                                </div>
+                            <div class="roteiro-card">
+                                <a href="{% url 'roteiros_com_pais' item_pais.id roteiro.id %}" class="link-roteiro">
+                                    <div class="info-roteiro">
+                                        <h2>{{ roteiro.nome }}</h2>
+                                    </div>
+                                    <div class="info-roteiro">
+                                        <h4>Dias:</h4>
+                                        <p>{{ roteiro.dias }}</p>
+                                    </div>
+                                    <div class="info-roteiro">
+                                        <h4>Época do ano:</h4>
+                                        <p>{{ roteiro.epoca }}</p>
+                                    </div>
                                 
-                            </a>
+                                </a>
+                                <a href="{% url 'editar_roteiro' roteiro.id %}" class="editar_roteiro" style="margin-top: 25px;"></a>
+                            </div>
                             
                         {% endfor %}
                     </div>
