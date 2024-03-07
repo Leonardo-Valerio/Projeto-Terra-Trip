@@ -8,28 +8,35 @@
     {% include 'home/partials/_header.html' %}
 </header>
 <main class="main-todos-roteiros">
+    
     <section class="exibindo-roteiros">
-        {% for roteiro in roteiros %}
-        <div class="roteiro-card">
-            <a href="{% url 'roteiros' roteiro.id %}" class="link-roteiro">
-                <div class="info-roteiro">
-                    <h2>{{ roteiro.nome }}</h2>
-                </div>
-                <div class="info-roteiro">
-                    <h4>Dias:</h4>
-                    <p>{{ roteiro.dias }}</p>
-                </div>
-                <div class="info-roteiro">
-                    <h4>Época do ano:</h4>
-                    <p>{{ roteiro.epoca }}</p>
-                </div>
-            
-            
-            </a>
-            <a href="{% url 'editar_roteiro' roteiro.id %}" class="editar_roteiro" style="margin-top: 25px;"></a>
-        </div>
         
-        {% endfor %}
+        <div class="todos-roteiros">
+            {% for roteiro in roteiros %}
+            <div class="roteiro-card">
+                <a href="{% url 'roteiros' roteiro.id %}" class="link-roteiro">
+                    <div class="info-roteiro">
+                        <h2>{{ roteiro.nome }}</h2>
+                    </div>
+                    <div class="info-roteiro">
+                        <h4>Dias:</h4>
+                        <p>{{ roteiro.dias }}</p>
+                    </div>
+                    <div class="info-roteiro">
+                        <h4>Época do ano:</h4>
+                        <p>{{ roteiro.epoca }}</p>
+                    </div>
+            
+            
+                </a>
+                <div class="botoes-roteiro-card">
+                    <a href="{% url 'editar_roteiro' roteiro.id %}" class="editar_roteiro" style="margin-top: 25px;"></a>
+                    <a href="{% url 'deletar_roteiro' roteiro.id %}" class="deletar_roteiro" style="margin-top: 25px;"></a>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
     </section>
 
     <section class="formulario-todos-roteiros">

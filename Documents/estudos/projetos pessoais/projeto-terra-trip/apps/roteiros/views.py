@@ -3,6 +3,7 @@ from apps.roteiros.forms import RoteiroForms, GerarRoteiroForm
 from apps.roteiros.models import Roteiro
 from apps.home.models import Paises
 from django.contrib import messages
+from django.urls import reverse
 import openai
 import os
 import dotenv
@@ -134,3 +135,19 @@ def editar_roteiro(request, roteiro_id):
             roteiro.save()
             return redirect('todos_roteiros')
     return render(request,'roteiros/editar_roteiro.html', {'form_roteiro': formulario_edit, 'roteiro_id':roteiro_id})
+
+def deletar_roteiro(request, roteiro_id):
+    roteiro = Roteiro.objects.get(id=roteiro_id)
+    roteiro.delete()
+    return redirect('todos_roteiros')
+
+def remover_pais_roteiro(request, pais_id, roteiro_id):
+    roteiro = Roteiro.objects.get(id=roteiro_id)
+    novo_roteiro = []
+    for pais in roteiro.grupo_paises:
+        if pais['id'] != pais_id:
+            novo_roteiro.append(pais)
+    
+    roteiro.grupo_paises = novo_roteiro
+    roteiro.save()
+    return redirect(reverse('roteiros', kwargs={'roteiro_id': roteiro_id}))

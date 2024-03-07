@@ -9,6 +9,7 @@
         </div>
         {% include 'home/partials/_header.html' %}
     </header>   
+    
     <main class="main-pais">
         
         <section class="categorias">
@@ -56,78 +57,7 @@
                     
                 </div>
             </div>
-        </section>
-        <div class="adicionar-roteiro">
-            <a class="botao-roteiro" onclick="abrirModal()">Adicionar ao roteiro</a>
-        </div>
-        <div class="janela-modal" id="janela-modal">
-            <div class="modal" id="modal">
-                <button  class="fechar" id="fechar">X</button>
-                <section class="box-roteiros" id="roteiros">
-                    <div class="roteiros">
-                        {% for roteiro in roteiros %}
-                            <div class="roteiro-card">
-                                <a href="{% url 'roteiros_com_pais' item_pais.id roteiro.id %}" class="link-roteiro">
-                                    <div class="info-roteiro">
-                                        <h2>{{ roteiro.nome }}</h2>
-                                    </div>
-                                    <div class="info-roteiro">
-                                        <h4>Dias:</h4>
-                                        <p>{{ roteiro.dias }}</p>
-                                    </div>
-                                    <div class="info-roteiro">
-                                        <h4>Época do ano:</h4>
-                                        <p>{{ roteiro.epoca }}</p>
-                                    </div>
-                                
-                                </a>
-                                <a href="{% url 'editar_roteiro' roteiro.id %}" class="editar_roteiro" style="margin-top: 25px;"></a>
-                            </div>
-                            
-                        {% endfor %}
-                    </div>
-                    <button class="botao-roteiro" onclick="abrirForm()" style="margin-top: 25px;">Novo roteiro</button>
-                </section>
-                
-               
-                <form class="formulario-roteiro" id="formulario-roteiro" style="display: none;" method="POST" >
-                    {% csrf_token %}
-                    {% for field in form_roteiro.visible_fields %}
-                        <div class="campo-texto">
-                            <label class="label-acesso" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                            {{ field }}
-                        </div>
-                    {% endfor %}
-                    
-                    <button class="botao-roteiro" style="margin-top: 25px;" type="submit">Criar roteiro</button>
-                </form>
-            </div>
-        </div>
-        <script>
-            function abrirForm(){
-                const roteiros = document.getElementById('roteiros')
-                const formulario = document.getElementById('formulario-roteiro')
-                formulario.style.display = 'flex'
-                roteiros.style.display='none'
-            }
-        </script>
-        <script>
-            function abrirModal(){
-                const janelaModal = document.getElementById('janela-modal');
-                janelaModal.classList.add('abrir')
-                const fechar = document.getElementById('fechar')
-                const roteiros = document.getElementById('roteiros')
-                const formulario = document.getElementById('formulario-roteiro')
-                janelaModal.addEventListener('click',(e)=>{
-                    if(e.target.id =='janela-modal' || e.target.id =='fechar'){
-                        janelaModal.classList.remove('abrir')
-                        roteiros.style.display='flex'
-                        formulario.style.display='none'
-                    }
-                })
-            }
-
-        </script>
+        {% include 'roteiros/partials/_adicionar-roteiro.html' %}
     </main>   
     
 {% endblock %}

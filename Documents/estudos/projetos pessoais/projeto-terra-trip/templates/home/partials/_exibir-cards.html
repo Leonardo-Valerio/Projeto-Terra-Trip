@@ -5,8 +5,12 @@
         <ul class="lista-de-cards">
             {% if dados %}
                 {% for item in dados %}
+                {% if id_roteiro %}
+                    <a href="{% url 'remover_pais_roteiro' pais_id=item.id roteiro_id=id_roteiro %}" class="remove-pais"></a>
+                {% endif %}
                     <li class="cards">
                         <a href="{% url url_nome item.id %}" class="card">
+                            
                             {% if page %}
                                 <img class="img-card" src="{{ item.imagem }}" alt="">
                                 
@@ -19,7 +23,7 @@
                 {% endfor %}
             {% else %}
                 <li>
-                    <p>Em breve será adicionado...</p>
+                    <p>Nenhum país adicionado ainda</p>
                 </li>
             {% endif %}
         </ul>

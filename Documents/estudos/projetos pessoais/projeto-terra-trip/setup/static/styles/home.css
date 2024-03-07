@@ -212,7 +212,10 @@ html, body {
     align-items: center;
     flex-direction: column;
     
+    
+    
 }
+
 .box-cidade{
     width: 95%;
 }
@@ -386,6 +389,14 @@ html, body {
     width: 100%;
     height: 100%;
     
+}
+.todos-roteiros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
 }
 
 
@@ -725,6 +736,25 @@ footer{
     height: 30px;
     background-size: cover;
 
+}
+
+.deletar_roteiro{
+    background-image: url(../assets/roteiros/delete.png);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+.botoes-roteiro-card{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.remove-pais{
+    background-image: url(../assets/roteiros/remove-pais.png);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    
 }
 @media (min-width:1300px){
     .menu-lateral.scroll {
