@@ -10,6 +10,14 @@
     <main class="principal">
         {% include 'home/partials/_menu-lateral.html' %}
         <section class="categorias">
+            <div class="busca">
+                <div class="box-busca">
+                    <form action="{% url 'buscar_index' %}" method="get">
+                        <input type="text" placeholder="Busque por um país" name="buscar" class="input-busca">
+                        <button type="submit" class="botao-search"></button>
+                    </form>
+                </div>
+            </div>
             <div class="box">
                 {% include 'home/partials/_exibir-cards.html' with titulo='Por continentes' dados=dados url_nome='continente' %}
 

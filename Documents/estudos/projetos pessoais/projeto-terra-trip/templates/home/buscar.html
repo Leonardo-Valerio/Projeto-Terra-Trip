@@ -1,0 +1,21 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+  
+    <header class="banner"  style="background-image: url('{{ card.imagem.url }}');" >
+        <div class="titulo">
+            <h1>{{ card.nome }}</h1>
+        </div>
+        {% include 'home/partials/_header.html' %}
+    </header>   
+    <main class="principal-busca">
+        
+       
+        {% include 'home/partials/_busca_pais.html' %}
+        <div class="exibir-busca">     
+            {% include 'home/partials/_exibir-cards.html' with dados=encontrado titulo='País encontrado' url_nome='pais' %}
+                
+        </div>
+        </section>
+    </main>   
+{% endblock %}

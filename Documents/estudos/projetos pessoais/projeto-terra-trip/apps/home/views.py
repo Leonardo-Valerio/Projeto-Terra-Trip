@@ -69,3 +69,17 @@ def pais(request, pais_id):
 def sobre_nos(request):
     return render(request, 'home/sobre_nos.html')
 
+def buscar(request,img_id=None):
+    encontrado = []
+    if 'buscar' in request.GET:
+        nome_a_buscar = request.GET.get('buscar','')
+        if nome_a_buscar:
+            encontrado = Paises.objects.filter(nome__icontains=nome_a_buscar)
+    if img_id is not None:
+        card_continente = get_object_or_404(Continentes, pk=img_id)
+    else:
+        if encontrado:
+            continente_id = encontrado[0].continente_relacionado.id
+            card_continente = get_object_or_404(Continentes, pk=continente_id)
+    return render(request, 'home/buscar.html', {'encontrado':encontrado, 'card':card_continente})
+

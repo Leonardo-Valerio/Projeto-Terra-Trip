@@ -8,9 +8,14 @@
         </div>
         {% include 'home/partials/_header.html' %}
     </header>   
+    
     <main class="principal">
         {% include 'home/partials/_menu-lateral.html' %}
+        
         <section class="categorias">
+            <div class="busca">
+                {% include 'home/partials/_busca_pais.html' %}
+            </div>
             <div class="box">
                 <p class="legenda">{{ card.legenda }}</p>
                 <p class="descricao">{{ card.descricao }}</p>
