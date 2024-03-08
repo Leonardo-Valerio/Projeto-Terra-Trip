@@ -61,8 +61,9 @@ html, body {
 }
 .menu-principal nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 10vw;
+    flex-wrap: wrap;
 }
 .menu-principal > nav > a{
     color: #ffffff;
@@ -117,7 +118,7 @@ html, body {
     margin-top: 5vh;
 }
 .section-cards{
-    padding-top: 10vh;
+    padding-top: 5vh;
 }
 .legenda{
     width: 95%;
@@ -137,6 +138,9 @@ html, body {
 
 .titulo-topico{
     margin-top: 3vh;
+    font-size: 5vh;
+    color: var(--marrom);
+    font-weight: 500;
 }
 
 .lista-de-cards{
@@ -203,12 +207,17 @@ html, body {
 
 
 /*---------------MAIN PAISES------------------*/
+
+
 .box-pontos{
     display: flex;
     align-items: center;
     flex-direction: column;
     
+    
+    
 }
+
 .box-cidade{
     width: 95%;
 }
@@ -283,7 +292,6 @@ html, body {
     background-color: transparent;
     border-radius: 10px;
     transition-duration: 0.5s;
-    width: 50%;
     display: block;
     font-size: large;
     display: block;
@@ -366,10 +374,82 @@ html, body {
     width: 100%;
 }
 
-.roteiro-card{
-    width: 40px;
-    height: 40px;
+.box-roteiros{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+.roteiros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    
+}
+.todos-roteiros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
+}
+
+
+.roteiro-card{
+    color: black;
+    text-decoration: none;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.roteiro-card:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.link-roteiro{
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--marrom);
+    padding-bottom: 5% ;
+    
+}
+
+.info-roteiro{
+
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+
+.controle-roteiros{
+    max-height: 60vh ;
+    overflow-y: auto;
+}
+
 /*---------------MAIN SOBRE NÓS------------------*/
 .main-sobre-nos{
     width: 100%;
@@ -435,9 +515,11 @@ html, body {
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3) ;
+    cursor: default;
 }
 
-.quadro-sobre-nos:hover{
+.quadro-sobre-nos-link:hover{
+    cursor: pointer;
     border-radius: 15px;
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.6) ;
 }
@@ -570,7 +652,175 @@ footer{
     color: rgb(2, 58, 2);
 }
 
+/*-----------------pagina-roteiros---------------*/
 
+.banner-roteiros{
+    background-image: url(../assets/roteiros/bg-roteiros.jpg);
+}
+
+.main-roteiros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.exibicao-paises-roteiros{
+    width: 70vw;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.box-ia{
+    margin-top: 4vw;
+    width: 70vw;
+    text-align: center;
+}
+.box-ia h2{
+    font-weight: lighter;
+    color: #A67458;
+    font-size: 3vw;
+}
+
+.section-botao-roteiro{
+    margin-top: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.informacoes-roteiro{
+    margin-top: 4vw;
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    
+}
+.texto-ia{
+    margin-top: 2vw;
+    line-height: 4vh;
+}
+
+/*-----------------main-todos-roteiros---------------*/
+
+.banner-todos-roteiros{
+    background-image: url(../assets/roteiros/bg-todos-os-roteiros.jpg);
+}
+
+.main-todos-roteiros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.exibindo-roteiros{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.formulario-todos-roteiros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.formulario-todos-roteiros .input-roteiro{
+    border: 1px solid #025159;
+}
+.formulario-todos-roteiros label{
+    color: #A67458;
+}
+
+
+/*-----------------editar-roteiros---------------*/
+.editar_roteiro{
+    background-image: url(../assets/roteiros/edit.png);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+
+}
+
+.deletar_roteiro{
+    background-image: url(../assets/roteiros/delete.png);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+.botoes-roteiro-card{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.remove-pais{
+    background-image: url(../assets/roteiros/remove-pais.png);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    
+}
+/*-----------------pg-busca---------------*/
+
+.principal-busca{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-busca{
+    background-color: white;
+    border: none;
+    height: 100%;
+    
+}
+.botao-search{
+    background-image: url(../assets/home/search-icon.png);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    border:none;
+    background-color: white;
+    cursor: pointer;
+}
+.box-busca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: solid 1px var(--azul4);
+    padding: 5px;
+    transition: 0.5s;
+}
+.box-busca:hover{
+    border-color: var(--marrom);
+}
+
+.input-busca:focus {
+    outline: none;
+}
+.exibir-busca{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.busca{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*-----------------MQ---------------*/
 @media (min-width:1300px){
     .menu-lateral.scroll {
         top: 0; 
@@ -664,6 +914,10 @@ footer{
     .botao-acesso{
         padding: 2vw;
     }
+    .info-roteiro{
+        flex-direction: column;
+    }
+    
 }
 
 @media (max-width:700px){

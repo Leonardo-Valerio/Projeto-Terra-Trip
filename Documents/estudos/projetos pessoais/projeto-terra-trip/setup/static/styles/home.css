@@ -207,6 +207,8 @@ html, body {
 
 
 /*---------------MAIN PAISES------------------*/
+
+
 .box-pontos{
     display: flex;
     align-items: center;
@@ -440,6 +442,12 @@ html, body {
     display: flex;
     gap: 10px;
     flex-direction: row;
+}
+
+
+.controle-roteiros{
+    max-height: 60vh ;
+    overflow-y: auto;
 }
 
 /*---------------MAIN SOBRE NÓS------------------*/
