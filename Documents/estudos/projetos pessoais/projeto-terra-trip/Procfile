@@ -1,1 +1,1 @@
-web: gunicorn projeto-terra-trip.wsgi --log-file -
+web: gunicorn projeto-terra-trip.wsgi:app
