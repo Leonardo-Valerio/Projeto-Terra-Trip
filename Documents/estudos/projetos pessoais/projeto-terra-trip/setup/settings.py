@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["projeto-terra-trip.fly.dev"]
 
 
 
@@ -123,7 +123,7 @@ USE_TZ = True
 
 # AWS Configuração
 
-AWS_ACESS_KEY_ID = str(os.getenv('AWS_ACESS_KEY_ID'))
+AWS_ACESS_KEY_ID = str(os.getenv('AWS_ACCESS_KEY_ID'))
 
 AWS_SECRET_ACESS_KEY = str(os.getenv('AWS_SECRET_ACESS_KEY'))
 
