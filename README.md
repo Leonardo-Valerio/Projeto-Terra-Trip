@@ -127,7 +127,7 @@ python manage.py runserver
 - Acesse `http://127.0.0.1:8000/` e comece a explorar o Terra Trip!
 
 ### Link do vídeo do projeto
-https://www.youtube.com/watch?v=TxYkxNebk5g
+https://www.youtube.com/watch?v=4XC-_VGAgoM
 ### Imagens do projeto
 - **Home**
 ![image](https://github.com/Leonardo-Valerio/Projeto-Terra-Trip/assets/128194207/42b792fe-cce3-4f0b-8738-66efcf9dc247)
